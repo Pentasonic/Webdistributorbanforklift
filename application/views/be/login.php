@@ -34,7 +34,7 @@
                         <!-- Nested Row within Card Body -->
                         <div class="row">
                             <!-- iamge dynamic from database -->
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image" style="background: url('https://source.unsplash.com/Mv9hjnEUHR4/600x800')"></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image" style="background: url('<?php echo base_url($pages_data->lokasi) ?>')"></div>
                             <div class="col-lg-6">
                                 <div class="p-5" style="margin-top: 110px;">
                                     <div class="text-center">

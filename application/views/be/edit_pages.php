@@ -24,7 +24,7 @@ $this->load->view('be/template/header');
             <input name="image-upload-slider" id="image-upload-slider" type="file" class="form-control" placeholder="File Gambar" aria-label="File Gambar" aria-describedby="basic-addon1">
             <input type="hidden" id="brand-logo-image-url" name="brand-logo-image-url">
         </div>
-        <span style="font-size:10px;">Width : 600px x Height 800px</span><br>
+        <span id="size" style="font-size:10px;">Width : 600px x Height 800px</span><br>
         <img src="<?= base_url($data_pages->lokasi)?>" id="logoShow"/>
         <div id="cropAreaLogo" style="width:100%; overflow-x:scroll;">
         </div>
@@ -42,10 +42,17 @@ $this->load->view('be/template/header');
     <input type="submit" class="btn btn-primary" value="Simpan">
     </form>
     <script>
+        let id_img = '<?= $this->uri->segment(3); ?>';
+        if(id_img == 8){
+            $("#size").text("Width : 600px x Height 800px");
+        }else if(id_img == 5){
+            $("#size").text("Width : 978px x Height 1000px");
+        }else{
+            $("#size").text("Width : 1200px x Height 372px");
+        }
         $("#selesaiLogo").hide();
         $("#image-upload-slider").on('change', function() {
             $("#logoShow").hide();
-            let id_img = '<?= $this->uri->segment(3); ?>';
             if(id_img == 8){
                 $cropLogo = $("#cropAreaLogo").croppie({
                     enableExif: true,
@@ -59,6 +66,7 @@ $this->load->view('be/template/header');
                     }
                 });
             }else if(id_img == 5){
+                $("#size").text("Width : 978px x Height 1000px");
                 $cropLogo = $("#cropAreaLogo").croppie({
                     enableExif: true,
                     viewport: {
@@ -71,6 +79,7 @@ $this->load->view('be/template/header');
                     }
                 });
             }else{
+                $("#size").text("Width : 1200px x Height 372px");
                 $cropLogo = $("#cropAreaLogo").croppie({
                     enableExif: true,
                     viewport: {

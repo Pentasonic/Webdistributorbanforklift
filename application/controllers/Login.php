@@ -13,7 +13,8 @@ class Login extends CI_Controller
 	}
 	public function index()
 	{
-		$this->load->view('be/login');
+		$data['pages_data'] = $this->ays_model->getDataPagesOnly(8)->row();
+		$this->load->view('be/login',$data);
 	}
 
 	public function loginProcess()
