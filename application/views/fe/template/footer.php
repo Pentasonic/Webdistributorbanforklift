@@ -39,7 +39,7 @@
                             <h4 class="subtitle">LOKASI KAMI</h4>
                             <p><?php echo $setting_data->contact_setting_lokasi_string; ?><br>
                             <?php echo $setting_data->contact_setting_website; ?></p>
-
+                            <iframe src="<?php echo $setting_data->contact_setting_maps_lat_lag; ?>" width="100%" height="150" frameborder="0" style="border:0" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
