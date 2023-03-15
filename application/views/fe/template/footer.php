@@ -14,11 +14,14 @@
                             <p style="text-align:justify;"><?php echo $about_data->deksripsi; ?></p>
                             <br>
                             <div class="social-links">
-                                <a href="https://id-id.facebook.com/" title="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                                <a href="https://www.instagram.com/" title="Facebook" target="_blank"><i class="fab fa-instagram"></i></a>
-                                <a href="https://www.youtube.com/" title="Facebook" target="_blank"><i class="fab fa-youtube"></i></a>
-                                <a href="https://id.linkedin.com/" title="Facebook" target="_blank"><i class="fab fa-linkedin"></i></a>
-
+                            <?php
+                                $account_count = count(json_decode($setting_data->footer_setting_global_medsos_list_array));
+                                $account_data = json_decode($setting_data->footer_setting_global_medsos_list_array);
+                                $title = ["Twitter","Facebook","Instagram","Linkedin"];
+                                $class = ["fab fa-twitter","fab fa-facebook-f","fab fa-instagram","fab fa-linkedin"];
+                                for ($i = 0; $i < $account_count; $i++) { ?>
+                                    <a href="<?php echo $account_data[$i]->url_link; ?>" title="<?= $title[$i]; ?>" target="_blank"><i class="<?= $class[$i]; ?>"></i></a>
+                                <?php } ?>
                             </div>
                         </div>
                         <div class="col-md-3">
