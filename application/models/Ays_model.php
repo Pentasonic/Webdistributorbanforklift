@@ -151,6 +151,16 @@ class Ays_model extends CI_Model
             ->get();
         return $pages;
     }
+    public function getDataPagesOnly($id)
+    {
+        $pages = $this->db->select('*,a.status AS statusa')
+        ->from("pages a")
+            ->join('asset b', 'a.gambar_pages = b.id_asset')
+            ->join("user c", "a.id_creator=c.id_user")
+            ->where("id_pages",$id)
+            ->get();
+        return $pages;
+    }
     public function getDataSliderWhere($where)
     {
         $slider = $this->db->from("slider a")

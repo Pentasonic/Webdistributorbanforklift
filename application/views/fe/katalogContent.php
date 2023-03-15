@@ -3,7 +3,7 @@
 
 <section>
     <div class="w-100 pt-170 pb-50 dark-layer3 opc7 position-relative">
-        <div class="fixed-bg" style="background-image: url(https://www.shutterstock.com/image-vector/product-catalog-catalogue-template-design-260nw-2165621047.jpg);"></div>
+        <div class="fixed-bg" style="background-image: url(<?php echo base_url($pages_data->lokasi) ?>);"></div>
         <div class="container">
             <div class="page-top-wrap w-100">
                 <h1 class="mb-0">Katalog Produk</h1>
@@ -60,7 +60,7 @@
                     <div class="shop-wrap w-100">
 
                         <div class="row align-items-center justify-content-center">
-                        <?php foreach($product_data_p1->result() as $produk){?>
+                        <?php foreach($product_data->result() as $produk){?>
                             <div class="col-md-4 col-sm-6 col-lg-3">
                                 <div class="shop-box w-100">
                                     <div class="shop-img w-100 position-relative overflow-hidden">

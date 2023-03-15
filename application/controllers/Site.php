@@ -68,6 +68,7 @@ class Site extends CI_Controller
 		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
+		$data['pages_data'] = $this->ays_model->getDataPagesOnly(9)->row();
 		$this->load->view('fe/katalogContent', $data);
 	}
 	public function forklift()
@@ -85,6 +86,8 @@ class Site extends CI_Controller
 		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
+		$data['pages_data'] = $this->ays_model->getDataPagesOnly(1)->row();
+		// echo var_dump($data['pages_data']);die();
 		$this->load->view('fe/forkliftContent',$data);
 	}
 	public function loader()
@@ -102,6 +105,7 @@ class Site extends CI_Controller
 		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
+		$data['pages_data'] = $this->ays_model->getDataPagesOnly(2)->row();
 		$this->load->view('fe/loaderContent',$data);
 	}
 	public function truck()
@@ -119,6 +123,7 @@ class Site extends CI_Controller
 		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
+		$data['pages_data'] = $this->ays_model->getDataPagesOnly(3)->row();
 		$this->load->view('fe/truckContent',$data);
 	}
 	public function press()
@@ -129,6 +134,8 @@ class Site extends CI_Controller
 		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
+		$data['pages_data'] = $this->ays_model->getDataPagesOnly(4)->row();
+		$data['pages_data_content'] = $this->ays_model->getDataPagesOnly(5)->row();
 		$this->load->view('fe/pressContent',$data);
 	}
 	public function produkDetail($id)
@@ -141,6 +148,7 @@ class Site extends CI_Controller
 		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
+		$data['pages_data'] = $this->ays_model->getDataPagesOnly(10)->row();
 		$this->load->view('fe/produkDetailContent',$data);
 	}
 	public function cekHarga($id)
@@ -153,6 +161,7 @@ class Site extends CI_Controller
 		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
+		$data['pages_data'] = $this->ays_model->getDataPagesOnly(11)->row();
 		$this->load->view('fe/cekHargaContent',$data);
 	}
 	public function artikel()
@@ -163,6 +172,7 @@ class Site extends CI_Controller
 		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
+		$data['pages_data'] = $this->ays_model->getDataPagesOnly(6)->row();
 		$this->load->view('fe/artikelContent',$data);
 	}
 	public function artikelDetail($id)
@@ -183,6 +193,7 @@ class Site extends CI_Controller
 		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
+		$data['pages_data'] = $this->ays_model->getDataPagesOnly(7)->row();
 		$this->load->view('fe/hubungiContent',$data);
 	}
 

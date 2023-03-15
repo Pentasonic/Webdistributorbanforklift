@@ -3,7 +3,7 @@
 
 <section>
     <div class="w-100 pt-170 pb-50 dark-layer3 opc7 position-relative">
-        <div class="fixed-bg" style="background-image: url(https://sc02.alicdn.com/kf/HTB13xGvRFXXXXcnXFXXq6xXFXXX8/220507443/HTB13xGvRFXXXXcnXFXXq6xXFXXX8.jpg);"></div>
+        <div class="fixed-bg" style="background-image: url(<?php echo base_url($pages_data->lokasi) ?>);"></div>
         <div class="container">
             <div class="page-top-wrap w-100">
                 <h1 class="mb-0">Mobile Press Ban</h1>
@@ -21,7 +21,7 @@
 
             <div class="solutions-wrap w-100">
                 <div class="row align-items-center">
-                    <div class="col-md-6 col-sm-12 col-lg-6"><img src="https://news.indotrading.com/uploads/2020/10/Mesin-Press-Hidrolik.jpg" class="img-fluid w-100" data-filename="content-2.jpg"><br></div>
+                    <div class="col-md-6 col-sm-12 col-lg-6"><img src="<?php echo base_url($pages_data_content->lokasi) ?>" class="img-fluid w-100" data-filename="content-2.jpg"><br></div>
                     <div class="col-md-6 col-sm-12 col-lg-6">
                         <div class="solutions-content-wrap w-100">
                             <h2 class="mb-0">Mobile Press Ban</h2>

@@ -3,7 +3,7 @@
 
 <section>
     <div class="w-100 pt-170 pb-50 dark-layer3 opc7 position-relative">
-        <div class="fixed-bg" style="background-image: url(https://iste.co.id/wp-content/uploads/2021/07/LOADERok.jpg);"></div>
+        <div class="fixed-bg" style="background-image: url(<?php echo base_url($pages_data->lokasi) ?>);"></div>
         <div class="container">
             <div class="page-top-wrap w-100">
                 <h1 class="mb-0">Ban Loader</h1>
