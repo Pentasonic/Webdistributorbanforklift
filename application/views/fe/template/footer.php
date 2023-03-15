@@ -28,8 +28,8 @@
                                 <?php echo $setting_data->contact_setting_email; ?>
                             </p>
                             <span class="subtitle">MARKETPLACE</span><br>
-                            <img style="width:150px;" src="<?php echo base_url(); ?>assets/frontend/images/brand/toped.png" alt="">
-                            <img style="width:150px;" src="<?php echo base_url(); ?>assets/frontend/images/brand/blibli.png" alt="">
+                            <a target="_blank" href="https://www.tokopedia.com/distributorbanforklift"><img style="width:150px;" src="<?php echo base_url(); ?>assets/frontend/images/brand/toped.png" alt=""></a>
+                            <a target="_blank" href="https://www.blibli.com/merchant/distributor-ban-forklift-official-store/DIB-70128?excludeProductList=false&promoTab=false&category=53704&pickupPointCode=PP-3441638&brand=Ascendo"><img style="width:150px;" src="<?php echo base_url(); ?>assets/frontend/images/brand/blibli.png" alt=""></a>
                             <br>
                         </div>
                         <div class="col-md-3">
