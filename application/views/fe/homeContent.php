@@ -206,5 +206,4 @@ echo $limited;?></span>
         </div>
     </div>
 </section>
-
 <?php $this->load->view('fe/template/footer'); ?>

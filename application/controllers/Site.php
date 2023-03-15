@@ -149,6 +149,12 @@ class Site extends CI_Controller
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
 		$data['pages_data'] = $this->ays_model->getDataPagesOnly(10)->row();
+		$datas = array(
+			"id_produk" => $id,
+			"year" => date('Y'),
+			"month" => date('Mon')
+		);
+		$this->ays_model->saveData('visitor', $datas);
 		$this->load->view('fe/produkDetailContent',$data);
 	}
 	public function cekHarga($id)

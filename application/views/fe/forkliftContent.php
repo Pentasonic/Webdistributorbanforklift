@@ -63,7 +63,7 @@
                             <?php foreach($product_data_p1->result() as $produk){?>
                             <div class="col-md-4 col-sm-6 col-lg-3">
                                 <div class="shop-box w-100">
-                                    <div class="shop-img w-100 position-relative overflow-hidden">
+                                    <div onclick="visit_produk('<?= $produk->id_produk; ?>')" class="shop-img w-100 position-relative overflow-hidden">
                                         <img class="img-fluid w-100" src="<?= base_url($produk->lokasi) ?>" alt="<?= base_url($produk->lokasi) ?>">
 
                                         <a href="<?php echo base_url() ?>site/produkDetail/<?= $produk->id_produk; ?>" title="">Detail Produk</a>
@@ -141,5 +141,20 @@
         </div>
     </div>
 </section>
-
+<script>
+    function visit_produk(id_produk) {
+		console.log(id_produk);
+		$.ajax({
+			url: '<?php echo base_url(); ?>site/visit_produk',
+			method: 'post',
+			dataType: 'JSON',
+			data: {
+				id_produk: id_produk
+			},
+			success: function(res) {
+				console.log(res);
+			}
+		});
+	}
+</script>
 <?php $this->load->view('fe/template/footer'); ?>
