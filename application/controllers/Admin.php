@@ -232,13 +232,13 @@ class Admin extends CI_Controller
 			redirect('login');
 		}
 	}
-	public function igList()
+	public function socList()
 	{
 		if ($this->session->userdata('logged_in')) {
 
-			$list = $this->input->post('igList');
+			$list = $this->input->post('socList');
 			$data = array(
-				"footer_setting_global_asset_ig_image_array" => $list,
+				"footer_setting_global_medsos_list_array" => $list,
 				"id_creator" => $this->session->userdata('id')
 			);
 			$where = array(

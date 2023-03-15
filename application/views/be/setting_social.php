@@ -16,126 +16,66 @@ $this->load->view('be/template/header');
     for ($i = 0; $i < $account_count; $i++) { ?>
         <div id="soc_id<?= $i; ?>" style="margin: 5px;">
             <i class="<?php echo $account_data[$i]->bi_icon_class; ?>"></i>
-            <?php echo $account_data[$i]->url_link; ?>
-            <button onclick="soc_edit('<?= $i; ?>')" class="btn btn-sm-danger"><i style="color: red;" class="bi bi-pencil"></i></button>
-        </div>
-    <?php } ?>
-    <div>
-        <!-- <button class="btn btn-success">Tambah Account</button> -->
-    </div>
-    <!-- <br><br>
-    <h4>Intagram Image Available</h4>
-    <hr>
-    <div id="ls">
-    <?php
-    $image_ig_count = count(json_decode($setting_data->footer_setting_global_asset_ig_image_array));
-    $image_data = json_decode($setting_data->footer_setting_global_asset_ig_image_array);
-    for ($i = 0; $i < $image_ig_count; $i++) { ?>
-        <!-- Gallery-item start -->
-        <div id="ig_img<?= $i; ?>" class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
-            <div class="single-awesome-project">
-                <div class="awesome-img">
-                    <a href="#"><img id="ig_url<?= $i; ?>" src="<?php echo $image_data[$i]->url_image_ig; ?>" alt="" /></a>
-                    <div class="add-actions text-center">
-                        <div class="project-dec">
-                            <a class="portfolio-lightbox" data-gallery="myGallery" href="<?php echo $image_data[$i]->url_image_ig; ?>">
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <span id="item<?= $i; ?>"><?php echo $account_data[$i]->url_link; ?></span>
+            <div style="display:inline;" id="act<?= $i; ?>">
+                <button onclick="soc_edit('<?= $i; ?>')" class="btn btn-sm-danger"><i style="color: red;" class="bi bi-pencil"></i></button>
             </div>
-            <span class="btn btn-danger" style="cursor: pointer;margin:5px;" onclick="ig_remove('<?= $i; ?>')"><i class="bi bi-trash"></i> Hapus</span>
         </div>
-        <!-- Gallery-item end -->
     <?php } ?>
-    </div>
+    <input type="hidden" value="<?= $account_count; ?>" id="jmlSoc">
     <div>
-        <button id="inc" class="btn btn-success">Tambah URL IG Gambar</button>
-    </div> -->
+    </div>
 </div>
 <script>
-    var jml_img_ig = '<?= $image_ig_count; ?>';
-    $('#inc').click(function() {
-        $('#ls').append(`<div id="ig_url` + jml_img_ig + `">
-                        <input id="itemInput` + jml_img_ig + `" type="text"><span onclick="igsavebtn('` + jml_img_ig + `')" class="btn btn-primary">save</span>
-                    </div>`);
-                    jml_img_ig++;
-    });
-    function igsavebtn(id){
-        var arr = [];
-        var data_src_now = $('#itemInput' + id).val();
-        for(var i=0; i<jml_img_ig;i++){
-            var data_src = $('#itemInput' + i).val();
-            if(data_src === undefined){
-                data_src = $('#ig_url'+i).attr('src');
-            }
-            var data = {"url_image_ig":""+data_src+""};
-            if(data_src != ""){
+    
 
-                arr.push(data);
+    function soc_edit(id){
+        let data = $("#item"+id).text();
+        $("#item"+id).html(`<input type="text" id="val_soc`+id+`" value="`+data+`">`);
+        $("#act"+id).html(`<button onclick="acc_edit(`+id+`)" class="btn btn-sm-danger"><i style="color: red;" class="bi bi-check"></i></button>`);
+        console.log(id);
+    }
+    
+    function acc_edit(id){
+        console.log(id);
+        let fill =  $("#val_soc"+id).val();
+        console.log(fill);
+        $("#item"+id).html(fill);
+        $("#act"+id).html(`<button onclick="acc_edit('<?= $id; ?>')" class="btn btn-sm-danger"><i style="color: red;" class="bi bi-pencil"></i></button>`);
+        var arr = [];
+        var data_src_now = $("#val_soc"+id).val();
+        var jml_img_ig = $("#jmlSoc").val();
+        var icon_l = ["bi bi-twitter","bi bi-facebook","bi bi-instagram","bi bi-linkedin"];
+        var asset_l = ["https://yms.com/asset/twitter","https://yms.com/asset/facebook","https://yms.com/asset/instagram","https://yms.com/asset/linkedin"];
+        for(var i=0; i<jml_img_ig;i++){
+            if(i == id){
+
+                var data = {"bi_icon_class":""+icon_l[i]+"","asset_icon_url":""+asset_l[i]+"","url_link":""+fill+""};
+                if(data_src != ""){
+    
+                    arr.push(data);
+                }
+            }else{
+                var data_src = $("#item"+i).text();
+                var data = {"bi_icon_class":""+icon_l[i]+"","asset_icon_url":""+asset_l[i]+"","url_link":""+data_src+""};
+                if(data_src != ""){
+    
+                    arr.push(data);
+                }
+
             }
         }
         console.log(arr);
-        $('#ig_url'+id).remove();
-        $('#itemInput' + id).remove();
         $.ajax({
-            url: '<?php echo base_url(); ?>admin/igList',
+            url: '<?php echo base_url(); ?>admin/socList',
             method: 'post',
             data: {
-                igList: JSON.stringify(arr)
+                socList: JSON.stringify(arr)
             },
             success: function(res) {
                 console.log(res);
             }
         });
-
-        $('#ls').append(`<div id="ig_img`+id+`" class="col-md-4 col-sm-4 col-xs-12 portfolio-item filter-app portfolio-item">
-            <div class="single-awesome-project">
-                <div class="awesome-img">
-                    <a href="#"><img id="ig_url`+id+`" src="`+data_src_now+`" alt="" /></a>
-                    <div class="add-actions text-center">
-                        <div class="project-dec">
-                            <a class="portfolio-lightbox" data-gallery="myGallery" href="`+data_src_now+`">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <span class="btn btn-danger" style="cursor: pointer;margin:5px;" onclick="ig_remove('`+id+`')"><i class="bi bi-trash"></i> Hapus</span>
-        </div>`);
-    }
-    function ig_remove(id){
-        var arr = [];
-        $('#ig_img'+id).remove();
-        for(var i=0; i<jml_img_ig;i++){
-            var data_src = $('#ig_url' + i).attr('src');
-            var data = {"url_image_ig":""+data_src+""};
-            arr.push(data);
-        }
-        // console.log(arr);
-        var aff_after = [];
-        var hapus = $('#ig_url' + id).attr('src');
-        for (var j = 0; j < jml_img_ig; j++) {
-            if (arr[j].url_image_ig != "undefined") {
-                aff_after.push(arr[j]);
-            }
-            
-        }
-        // console.log(JSON.stringify(aff_after));
-        $.ajax({
-            url: '<?php echo base_url(); ?>admin/igList',
-            method: 'post',
-            data: {
-                igList: JSON.stringify(aff_after)
-            },
-            success: function(res) {
-                console.log(res);
-            }
-        });
-    }
-
-    function soc_edit(id){
-        console.log(id);
     }
 </script>
 <?php
