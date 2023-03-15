@@ -48,6 +48,17 @@ class Ays_model extends CI_Model
             ->get();
         return $produk;
     }
+    public function getDataProdukRandom()
+    {
+        $produk = $this->db->select('*, a.status as sts')->from("produk a")
+            ->join("user b", "a.id_creator=b.id_user")
+            ->join("asset c", "a.id_gambar=c.id_asset")
+            ->join("merek e","a.id_merek=e.id_merek")
+            ->order_by('RAND()') // mengacak urutan data
+            ->limit(4) // membatasi jumlah data yang diambil
+            ->get();
+        return $produk;
+    }
     public function getDataProdukWhere($where)
     {
         $produk = $this->db->select('*,a.nama_produk as name')->from("produk a")

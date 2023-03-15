@@ -144,6 +144,7 @@ class Site extends CI_Controller
 			"id_produk" => $id
 		);
 		$data['data_produk'] = $this->ays_model->getDataProdukWhere($where)->row();
+		$data['data_produk_terkait'] = $this->ays_model->getDataProdukRandom();
 		$whereGallery = array("status_publikasi" => "publik", "a.status" => "aktif");
 		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();

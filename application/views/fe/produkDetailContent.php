@@ -58,69 +58,23 @@
                 <br>
                 <h5>Produk Terkait</h5>
                 <div class="row align-items-center justify-content-center">
+                    <?php foreach($data_produk_terkait->result() as $terkait){?>
                     <div class="col-md-4 col-sm-6 col-lg-3">
                         <div class="shop-box w-100">
                             <div class="shop-img w-100 position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="https://reviberkahmakmur.co.id/uploads/cache/listpages/d324b405afe69fe4a30766c9f792387c_thumb_619x619.png" alt="Shop Image 1">
+                                <img class="img-fluid w-100" src="<?= base_url($terkait->lokasi) ?>" alt="Shop Image 1">
 
-                                <a href="<?php echo base_url() ?>site/produkDetail" title="">Detail Produk</a>
+                                <a href="<?php echo base_url() ?>site/produkDetail/<?= $terkait->id_produk; ?>" title="">Detail Produk</a>
                             </div>
                             <div class="shop-info w-100">
-                                <h3 class="mb-0"><a href="<?php echo base_url() ?>site/produkDetail" title="">Hydraulic Filter Return Mitsubishi Forklift 91375-03800</a></h3>
+                                <h3 class="mb-0"><a href="<?php echo base_url() ?>site/produkDetail/<?= $terkait->id_produk; ?>" title=""><?= $terkait->nama_produk; ?></a></h3>
 
-                                <span class="text-muted">Genuine Parts</span>
+                                <span class="text-muted"><?= $terkait->nama_merek; ?></span>
 
                             </div>
                         </div>
                     </div>
-
-                    <div class="col-md-4 col-sm-6 col-lg-3">
-                        <div class="shop-box w-100">
-                            <div class="shop-img w-100 position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="https://reviberkahmakmur.co.id/uploads/cache/listpages/b27f3f5f2d417cecf11c0ef2ae68f5d0_thumb_619x619.png" alt="Shop Image 1">
-
-                                <a href="<?php echo base_url() ?>site/produkDetail" title="">Detail Produk</a>
-                            </div>
-                            <div class="shop-info w-100">
-                                <h3 class="mb-0"><a href="<?php echo base_url() ?>site/produkDetail" title="">Oil Filter Mitsubishi Forklift 32A40-00400</a></h3>
-
-                                <span class="text-muted">Genuine Parts</span>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6 col-lg-3">
-                        <div class="shop-box w-100">
-                            <div class="shop-img w-100 position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="https://reviberkahmakmur.co.id/uploads/cache/listpages/95ab6650e3cb8b0a5f252ee07ba55b87_thumb_619x619.png" alt="Shop Image 1">
-
-                                <a href="<?php echo base_url() ?>site/produkDetail" title="">Detail Produk</a>
-                            </div>
-                            <div class="shop-info w-100">
-                                <h3 class="mb-0"><a href="<?php echo base_url() ?>site/produkDetail" title="">Oil Filter Toyota Forklift 15601-76008-71</a></h3>
-
-                                <span class="text-muted">Genuine Parts</span>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-6 col-lg-3">
-                        <div class="shop-box w-100">
-                            <div class="shop-img w-100 position-relative overflow-hidden">
-                                <img class="img-fluid w-100" src="https://reviberkahmakmur.co.id/uploads/cache/listpages/8a12d833e01bcf11a686ccf0bbb96f78_thumb_619x619.png" alt="Shop Image 1">
-
-                                <a href="<?php echo base_url() ?>site/produkDetail" title="">Detail Produk</a>
-                            </div>
-                            <div class="shop-info w-100">
-                                <h3 class="mb-0"><a href="<?php echo base_url() ?>site/produkDetail" title="">Hydraulic Filter Toyota Forklift 67502-26600-71</a></h3>
-
-                                <span class="text-muted">Genuine Parts</span>
-
-                            </div>
-                        </div>
-                    </div>
+                        <?php } ?>
                 </div>
 
             </div>
