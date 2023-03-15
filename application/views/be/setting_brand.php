@@ -26,6 +26,7 @@ $this->load->view('be/template/header');
             <span>Logo</span>
             <img id="logoShow" width="100" src="<?php echo base_url() . $setting_data->lokasi; ?>" alt="">
         </div>
+        <span style="font-size:10px;">Width : 465px x Height 92px</span>
         <div id="cropAreaLogo">
         </div>
         <center>
@@ -33,7 +34,7 @@ $this->load->view('be/template/header');
         </center>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Logo Website (.jpeg)</span>
+                <span class="input-group-text" id="basic-addon1">Logo Website</span>
             </div>
             <input name="brand-logo-image" id="brand-logo-image" type="file" class="form-control" placeholder="Logo" aria-label="Logo" aria-describedby="basic-addon1">
             <input type="hidden" id="brand-logo-image-url" name="brand-logo-image-url">
@@ -42,6 +43,7 @@ $this->load->view('be/template/header');
             <span>Footer Logo Image</span>
             <img id="footerShow" width="100" src="<?php echo base_url() . $about_data->lokasi; ?>" alt="">
         </div>
+        <span style="font-size:10px;">Width : 100px x Height 100px</span>
         <div id="cropAreaFooter">
         </div>
         <center>

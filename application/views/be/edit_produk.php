@@ -81,6 +81,7 @@ $this->load->view('be/template/header');
             <input name="image-upload-slider" id="image-upload-slider" type="file" class="form-control" placeholder="File Gambar" aria-label="File Gambar" aria-describedby="basic-addon1">
             <input type="hidden" id="brand-logo-image-url" name="brand-logo-image-url">
         </div>
+        <span style="font-size:10px;">Width : 619px x Height 619px</span><br>
         <img src="<?= base_url($data_produk->lokasi) ?>" id="logoShow" />
         <div id="cropAreaLogo" style="width:100%; overflow-x:scroll;">
         </div>
