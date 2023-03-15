@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Mar 2023 pada 07.17
+-- Waktu pembuatan: 15 Mar 2023 pada 06.48
 -- Versi server: 10.4.25-MariaDB
 -- Versi PHP: 8.1.10
 
@@ -112,7 +112,19 @@ INSERT INTO `asset` (`id_asset`, `nama_asset`, `lokasi`, `id_creator`, `created`
 (72, 'Toyota merek', 'assets/uploads/1678674210.jpg', 2, '2023-03-13 03:23:32', '2023-03-13 03:23:32'),
 (73, 'TCM merek', 'assets/uploads/1678674229.jpg', 2, '2023-03-13 03:23:50', '2023-03-13 03:23:50'),
 (74, 'Mitsubishi merek', 'assets/uploads/1678674246.jpg', 2, '2023-03-13 03:24:07', '2023-03-13 03:24:07'),
-(75, 'Nichiyu merek', 'assets/uploads/1678674292.jpg', 2, '2023-03-13 03:24:54', '2023-03-13 03:24:54');
+(75, 'Nichiyu merek', 'assets/uploads/1678674292.jpg', 2, '2023-03-13 03:24:54', '2023-03-13 03:24:54'),
+(76, 'Admin Image Login Slider', 'assets/uploads/1678838091.jpg', 2, '2023-03-15 00:55:03', '2023-03-15 00:55:03'),
+(77, 'Header Hubungi Kami Slider', 'assets/uploads/1678838443.jpg', 2, '2023-03-15 01:00:45', '2023-03-15 01:00:45'),
+(78, 'Admin Image Login Slider', 'assets/uploads/1678838849.jpg', 2, '2023-03-15 01:07:32', '2023-03-15 01:07:32'),
+(79, 'Content Mobile Press Ban Slider', 'assets/uploads/1678838899.jpg', 2, '2023-03-15 01:08:36', '2023-03-15 01:08:36'),
+(80, 'Test gallery', 'assets/uploads/1678839696.jpg', 2, '2023-03-15 01:21:38', '2023-03-15 01:21:38'),
+(81, 'Header Ban Forklift Slider', 'assets/uploads/1678841105.jpg', 2, '2023-03-15 01:45:07', '2023-03-15 01:45:07'),
+(82, 'Header Ban Loader Slider', 'assets/uploads/1678841177.jpg', 2, '2023-03-15 01:46:19', '2023-03-15 01:46:19'),
+(83, 'Header Mobile Press Ban Slider', 'assets/uploads/1678841276.jpg', 2, '2023-03-15 01:47:58', '2023-03-15 01:47:58'),
+(84, 'Header Artikel Slider', 'assets/uploads/1678841344.jpg', 2, '2023-03-15 01:49:06', '2023-03-15 01:49:06'),
+(85, 'Admin Image Login Slider', 'assets/uploads/1678841378.jpg', 2, '2023-03-15 01:49:40', '2023-03-15 01:49:40'),
+(86, 'Header Ban Truck Slider', 'assets/uploads/1678842080.jpg', 2, '2023-03-15 02:01:21', '2023-03-15 02:01:21'),
+(87, 'Header Search Slider', 'assets/uploads/1678843042.jpg', 2, '2023-03-15 02:17:23', '2023-03-15 02:17:23');
 
 -- --------------------------------------------------------
 
@@ -167,7 +179,8 @@ INSERT INTO `gallery` (`id_gallery`, `judul`, `summary`, `deskripsi_gallery`, `s
 (1, 'Cara Merawat Battery Forkliftv', 'Forklift adalah suatu alat/kendaraan yang menggunakan garpu atau clamp dipasang pada mast', '<p>kerjasama dengan Sekolah Cambrigdev</p>', 'publik', 'aktif', 2, 5, '2023-03-13 01:59:39', '2023-03-13 01:59:39'),
 (2, 'Tips Memilih Forklift Bekas', 'Forklift adalah suatu alat/kendaraan yang menggunakan garpu atau clamp dipasang pada mast', 'Ramah Tamah dengan Pinguin', 'publik', 'aktif', 2, 65, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (3, 'Cara Merawat Aki Yang Baik', 'Forklift adalah suatu alat/kendaraan yang menggunakan garpu atau clamp dipasang pada mast', '<p><strong>Halo Sahabat Prime, Salam Semangat&nbsp;</strong></p>\r\n<p>Tentunya Customer menginginkan umur atau Life time Battery Forklift awet, simak tips berikut untuk merawat Battery Forklift :</p>\r\n<p><strong>1. Selalu Jaga Kebersihan Battery</strong></p>\r\n<p>Untuk menghindari korosi &amp; terjadinya arus listrik hubungan singkat, jaga&nbsp; permukaan battery juga kabel battery agar tetap&nbsp; bersih dan kering.</p>\r\n<p><strong>2. Periksa Selalu Ketinggian Elektrolit</strong></p>\r\n<p>Periksa ketinggian elektrolit sebelum battery digunakan. Ketinggian elektrolit harus dijaga diantara batas&nbsp; maksimum dan minimum. Tambahkan air aki jika elektrolit berkurang,&nbsp; penambahan dilakukan sebelum battery di charge.</p>\r\n<p><strong>3. Jauhkan Dari Sumber Api</strong></p>\r\n<p>Pastikan sirkulasi udara diruang battery lancar, karena&nbsp; selama pemakaian battery menghasilkan gas-gas yang&nbsp; mudah terbakar. Juga pastikan kabel konektor battery terpasang dengan benar dan dalam kondisi baik, pemasangan&nbsp; kabel konektor yang tidak sesuai dapat mengakibatkan&nbsp; adanya percikan api. Untuk menghindari hal-hal yang tidak diinginkan,&nbsp; jauhkan battery dari sumber api (rokok, mesin las,&nbsp; gerinda dll).</p>\r\n<p><strong>4. Hindari Over Discharge</strong></p>\r\n<p>Tingkat pemakaian battery maksimum yang disarankan yaitu 70 % s/d 80 % dari kapasitasnya (lihat indikator battery pada forklift). Hindari pemakaian battery yang berlebihan (over discharge) karena akan memperpendek umur battery.</p>\r\n<p>PT. Revi Berkah Makmur merupakan Distributor Penjualan Resmi Battery YUASA, YUASA Battery merupakan brand battery Jepang dengan performa unggul, serta telah dipercaya oleh brand Forklift Jepang sebagai partner battery. Gunakan Brand YUASA untuk Battery Forklift Elektrik Counterbalance dan Reachtruk, guna mendukung performa Forklift Anda.</p>\r\n<p>Percayakan Pengadaan Battery Forklift Anda kepada kami :</p>\r\n<ol>\r\n<li>Distributor penjualan resmi Battery Forklift YUASA</li>\r\n<li>Free Training perawatan battery &amp; pengecekan kondisi.</li>\r\n<li>Tukar tambah battery bekas ke baru.</li>\r\n<li>Jaminan Warranty</li>\r\n</ol>', 'publik', 'aktif', 2, 65, '2023-03-13 00:18:38', '2023-03-13 00:18:38'),
-(4, 'Apa itu Forklift', 'Forklift adalah suatu alat/kendaraan yang menggunakan garpu atau clamp dipasang pada mast', '<p><strong>Halo Sahabat Prime, Salam Semangat !</strong></p>\r\n<p>Mari mengenal Forklift dan mekanismenya.</p>\r\n<p>Forklift adalah suatu alat/kendaraan yang menggunakan garpu atau clamp dipasang pada mast untuk mengangkat, menurunkan dan memindahkan suatu benda atau material berat dari satu&nbsp; tempat ke tempat lain.</p>\r\n<p>Forklift memiliki sistem pengangkat. Sistem pengangkat adalah gabungan dari dua batang rail vertikal sebagai penuntun yang disebut dengan mast, garpu (atau&nbsp; media pengangkat) bergerak naik/turun pada mast&nbsp; dan sistim hidrolik yang mengerakkannya. Mast dihubungkan&nbsp; ke badan forklift oleh hidrolik silinder yang mampu menggerakkan mast ke depan atau kebelakang.</p>\r\n<p>Badan forklift mempunyai banyak keutamaan seperti mobil, yaitu sebuah tenaga penggerak (dengan mesin, kopling, transmisi&nbsp; dan gardan), axle depan dan belakang, rem dan chassis. Sedangkan pada forklift battery tenaga penggerak berupa&nbsp; battery, controller dan motor listrik. Umumnya roda depan sebagai roda penggerak, sedangkan&nbsp; roda belakang sebagai kemudi.</p>\r\n<p>PT. Revi Berkah Makmur hadir untuk membantu Anda dalam menyediakan Forklift brand terkemuka: Mitsubishi, Nichiyu, Toyota, dan TCM. Konsultasikan kebutuhan Anda sesuai kondisi Warehouse dan Lapangan. Adapun layanan Sales yang kami tawarkan :</p>\r\n<ol>\r\n<li>Layanan tukar tambah unit Forlift bekas ke baru.</li>\r\n<li>After Sales Service (ASS) didukung mekanik bersertifikasi.</li>\r\n<li>Konsultasi dengan tenaga sales berpengalaman.</li>\r\n<li>Konsultasi perhitungan Total Cost Ownership.</li>\r\n<li>Product Warranty.</li>\r\n<li>Field Guidance dan Training operator.</li>\r\n</ol>', 'publik', 'aktif', 2, 66, '2023-03-13 00:31:48', '2023-03-13 00:31:48');
+(4, 'Apa itu Forklift', 'Forklift adalah suatu alat/kendaraan yang menggunakan garpu atau clamp dipasang pada mast', '<p><strong>Halo Sahabat Prime, Salam Semangat !</strong></p>\r\n<p>Mari mengenal Forklift dan mekanismenya.</p>\r\n<p>Forklift adalah suatu alat/kendaraan yang menggunakan garpu atau clamp dipasang pada mast untuk mengangkat, menurunkan dan memindahkan suatu benda atau material berat dari satu&nbsp; tempat ke tempat lain.</p>\r\n<p>Forklift memiliki sistem pengangkat. Sistem pengangkat adalah gabungan dari dua batang rail vertikal sebagai penuntun yang disebut dengan mast, garpu (atau&nbsp; media pengangkat) bergerak naik/turun pada mast&nbsp; dan sistim hidrolik yang mengerakkannya. Mast dihubungkan&nbsp; ke badan forklift oleh hidrolik silinder yang mampu menggerakkan mast ke depan atau kebelakang.</p>\r\n<p>Badan forklift mempunyai banyak keutamaan seperti mobil, yaitu sebuah tenaga penggerak (dengan mesin, kopling, transmisi&nbsp; dan gardan), axle depan dan belakang, rem dan chassis. Sedangkan pada forklift battery tenaga penggerak berupa&nbsp; battery, controller dan motor listrik. Umumnya roda depan sebagai roda penggerak, sedangkan&nbsp; roda belakang sebagai kemudi.</p>\r\n<p>PT. Revi Berkah Makmur hadir untuk membantu Anda dalam menyediakan Forklift brand terkemuka: Mitsubishi, Nichiyu, Toyota, dan TCM. Konsultasikan kebutuhan Anda sesuai kondisi Warehouse dan Lapangan. Adapun layanan Sales yang kami tawarkan :</p>\r\n<ol>\r\n<li>Layanan tukar tambah unit Forlift bekas ke baru.</li>\r\n<li>After Sales Service (ASS) didukung mekanik bersertifikasi.</li>\r\n<li>Konsultasi dengan tenaga sales berpengalaman.</li>\r\n<li>Konsultasi perhitungan Total Cost Ownership.</li>\r\n<li>Product Warranty.</li>\r\n<li>Field Guidance dan Training operator.</li>\r\n</ol>', 'publik', 'aktif', 2, 66, '2023-03-13 00:31:48', '2023-03-13 00:31:48'),
+(5, 'Test', 'Cek', '<p>asjgfljabsljbsjabcjsbacjsajcsja cjsa jcbjsabcbsakc</p>', 'publik', 'aktif', 2, 80, '2023-03-15 01:21:38', '2023-03-15 01:21:38');
 
 -- --------------------------------------------------------
 
@@ -205,7 +218,7 @@ CREATE TABLE `global_setting` (
 --
 
 INSERT INTO `global_setting` (`id_setting`, `gambar_ico`, `judul_tab`, `judul_website`, `content_color_text`, `contact_setting_phone`, `contact_setting_wa`, `contact_setting_email`, `contact_setting_website`, `contact_setting_lokasi_string`, `contact_setting_work_time`, `contact_setting_maps_lat_lag`, `header_setting_global_fill_color`, `header_setting_global_text_color`, `header_setting_global_font_style`, `footer_setting_global_deskripsi`, `footer_setting_global_medsos_list_array`, `footer_setting_global_asset_ig_image_array`, `footer_setting_global_fill_color`, `footer_setting_global_text_color`, `footer_setting_global_font_style`, `id_creator`) VALUES
-(3, 52, 'PT. PRIME FORKLIFT SERVICE', 'DISTIRBUTOR BAN FORKLIFT', '444/1300b5(ini warna percobaan)', '(+62)82210812989', '6282210812989', 'info@distributorbanforklift.com', 'https://distributorbanforklift.com', 'Karawang, West Java Indonesia', 'Monday-Friday (08.00 - 15.00 WIB)', 'https://maps-cdn.site123.com/include/globalMapDisplay.php?q=Karawang%2C+West+Java%2C+Indonesia&z=15&l=en&ilfc=1', '', '', '', 'PT. ASIAN YAHAMA SUMITEX adalah salah satu pabrik yang memproduksi produk nonwoven berbagai macam jenis, kami berlokasi di karawang jawabarat indonesia, kami siap memenuhi kebutuhan nonwoven anda dalam kuantitasn sedikit dan banyak.', '[ { \"bi_icon_class\":\"bi bi-twitter\",\"asset_icon_url\":\"https://yms.com/asset/twitter\", \"url_link\":\"https://twitter.com/yms\" }, { \"bi_icon_class\":\"bi bi-facebook\",\"asset_icon_url\":\"https://yms.com/asset/facebook\", \"url_link\":\"https://facebook.com/yms\" }, { \"bi_icon_class\":\"bi bi-instagram\",\"asset_icon_url\":\"https://yms.com/asset/linkedin\", \"url_link\":\"https://linkedin.com/yms\" }, { \"bi_icon_class\":\"bi bi-linkedin\",\"asset_icon_url\":\"https://yms.com/asset/instagram\", \"url_link\":\"https://instagram.com/yms\" } ]', '[]', '', '', '', 2);
+(3, 52, 'PT. PRIME FORKLIFT SERVICE', 'DISTIRBUTOR BAN FORKLIFT', '444/1300b5(ini warna percobaan)', '(+62)82210812989', '6282210812989', 'info@distributorbanforklift.com', 'https://distributorbanforklift.com', 'Karawang, West Java Indonesia', 'Monday-Friday (08.00 - 15.00 WIB)', 'https://maps-cdn.site123.com/include/globalMapDisplay.php?q=Karawang%2C+West+Java%2C+Indonesia&z=15&l=en&ilfc=1', '', '', '', 'PT. ASIAN YAHAMA SUMITEX adalah salah satu pabrik yang memproduksi produk nonwoven berbagai macam jenis, kami berlokasi di karawang jawabarat indonesia, kami siap memenuhi kebutuhan nonwoven anda dalam kuantitasn sedikit dan banyak.', '[{\"bi_icon_class\":\"bi bi-twitter\",\"asset_icon_url\":\"https://yms.com/asset/twitter\",\"url_link\":\"https://twitter.com/Distributor\"},{\"bi_icon_class\":\"bi bi-facebook\",\"asset_icon_url\":\"https://yms.com/asset/facebook\",\"url_link\":\"https://facebook.com/ymsB\"},{\"bi_icon_class\":\"bi bi-instagram\",\"asset_icon_url\":\"https://yms.com/asset/instagram\",\"url_link\":\"https://linkedin.com/yms\"},{\"bi_icon_class\":\"bi bi-linkedin\",\"asset_icon_url\":\"https://yms.com/asset/linkedin\",\"url_link\":\"https://instagram.com/yms\"}]', '[]', '', '', '', 2);
 
 -- --------------------------------------------------------
 
@@ -284,6 +297,41 @@ INSERT INTO `merek` (`id_merek`, `nama_merek`, `id_gambar`, `id_creator`, `creat
 -- --------------------------------------------------------
 
 --
+-- Struktur dari tabel `pages`
+--
+
+CREATE TABLE `pages` (
+  `id_pages` int(11) NOT NULL,
+  `gambar_pages` int(11) NOT NULL,
+  `judul_pages` varchar(50) NOT NULL,
+  `deskripsi_pages` varchar(100) NOT NULL,
+  `status` enum('aktif','non aktif') NOT NULL,
+  `id_creator` int(11) NOT NULL,
+  `created` datetime NOT NULL,
+  `updated` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `pages`
+--
+
+INSERT INTO `pages` (`id_pages`, `gambar_pages`, `judul_pages`, `deskripsi_pages`, `status`, `id_creator`, `created`, `updated`) VALUES
+(1, 81, 'Header Ban Forklift', '', 'aktif', 2, '2023-03-15 00:30:41', '2023-03-15 00:38:54'),
+(2, 82, 'Header Ban Loader', '', 'aktif', 2, '2023-03-15 00:30:41', '2023-03-15 00:38:54'),
+(3, 86, 'Header Ban Truck', '', 'aktif', 2, '2023-03-15 00:30:41', '2023-03-15 00:38:54'),
+(4, 83, 'Header Mobile Press Ban', '', 'aktif', 2, '2023-03-15 00:30:41', '2023-03-15 00:38:54'),
+(5, 79, 'Content Mobile Press Ban', '<h4 class=\"mb-0\">Press Ban Forklift Mobile, Kami datang langsung ke Lokasi anda untuk melakukan Pres', 'aktif', 2, '2023-03-15 00:30:41', '2023-03-15 00:38:54'),
+(6, 84, 'Header Artikel', '', 'aktif', 2, '2023-03-15 00:30:41', '2023-03-15 00:38:54'),
+(7, 77, 'Header Hubungi Kami', '', 'aktif', 2, '2023-03-15 00:30:41', '2023-03-15 00:38:54'),
+(8, 85, 'Admin Image Login', '', 'aktif', 2, '2023-03-15 00:30:41', '2023-03-15 00:38:54'),
+(9, 86, 'Header Katalog', '', 'aktif', 2, '2023-03-15 00:30:41', '2023-03-15 00:38:54'),
+(10, 86, 'Header Produk Detail', '', 'aktif', 2, '2023-03-15 00:30:41', '2023-03-15 00:38:54'),
+(11, 86, 'Header Cek Harga', '', 'aktif', 2, '2023-03-15 00:30:41', '2023-03-15 00:38:54'),
+(12, 87, 'Header Search', '', 'aktif', 2, '2023-03-15 00:30:41', '2023-03-15 00:38:54');
+
+-- --------------------------------------------------------
+
+--
 -- Struktur dari tabel `produk`
 --
 
@@ -344,7 +392,7 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`id_slider`, `gambar_slider`, `judul_slider`, `deskripsi_slider`, `link_pintasan`, `url_link_pintasan`, `status_link_pintasan`, `status`, `id_creator`, `created`, `updated`) VALUES
-(1, 1, 'Gudang', 'slider gudang', 'Ayo Mulai Sekarang!', '#about', 'aktif', 'non aktif', 2, '2022-11-04 10:44:10', '2023-03-13 02:19:14'),
+(1, 1, 'Gudang', 'slider gudang', 'Ayo Mulai Sekarang!', '#about', 'aktif', 'non aktif', 2, '2022-11-04 10:44:10', '2023-03-15 00:38:10'),
 (2, 2, 'Slider 200', 'slider', 'Mulai', '#', 'non aktif', 'non aktif', 2, '2022-11-04 10:44:10', '2023-03-13 02:23:19'),
 (3, 1, 'Slider 3', 'Ini slider 3', 'Mulai', '#', 'non aktif', 'non aktif', 2, '2022-11-04 10:44:10', '2023-03-13 02:17:50'),
 (4, 3, 'Slider 4', 'Ini slider 4', 'Mulai', '#', 'non aktif', 'non aktif', 2, '2022-11-04 10:44:10', '2023-03-13 02:18:44'),
@@ -401,15 +449,27 @@ CREATE TABLE `visitor` (
 --
 
 INSERT INTO `visitor` (`id`, `device`, `ip`, `month`, `year`, `id_produk`, `visited`) VALUES
-(12, '', '', 'Sep', '2022', 1, '2022-11-29 04:43:49'),
-(13, '', '', 'Okt', '2022', 4, '2022-11-29 04:43:52'),
-(14, '', '', 'Okt', '2022', 5, '2022-11-29 04:43:56'),
-(15, '', '', 'Nov', '2022', 4, '2022-11-29 04:44:03'),
-(16, '', '', 'Nov', '2022', 4, '2022-11-29 04:44:58'),
-(17, '', '', 'Nov', '2022', 5, '2022-11-29 04:45:04'),
-(18, '', '', 'Nov', '2022', 1, '2022-11-29 04:45:10'),
-(19, '', '', 'Nov', '2022', 4, '2022-11-29 04:45:16'),
-(20, '', '', 'Nov', '2022', 5, '2022-11-29 04:46:58');
+(12, '', '', 'Sep', '2023', 1, '2023-03-15 01:55:05'),
+(13, '', '', 'Okt', '2023', 4, '2023-03-15 01:55:09'),
+(14, '', '', 'Okt', '2023', 5, '2023-03-15 01:55:12'),
+(15, '', '', 'Nov', '2023', 4, '2023-03-15 01:55:15'),
+(16, '', '', 'Nov', '2023', 4, '2023-03-15 01:55:18'),
+(17, '', '', 'Nov', '2023', 5, '2023-03-15 01:55:20'),
+(18, '', '', 'Nov', '2023', 1, '2023-03-15 01:55:23'),
+(19, '', '', 'Nov', '2023', 4, '2023-03-15 01:55:25'),
+(20, '', '', 'Nov', '2023', 5, '2023-03-15 01:55:28'),
+(21, '', '', 'Mar', '2023', 7, '2023-03-15 02:07:54'),
+(22, '', '', 'Mar', '2023', 1, '2023-03-15 02:10:29'),
+(23, '', '', 'Mar', '2023', 7, '2023-03-15 02:10:37'),
+(24, '', '', 'Mar', '2023', 7, '2023-03-15 02:15:04'),
+(25, '', '', 'Mar', '2023', 7, '2023-03-15 02:16:21'),
+(26, '', '', 'Mar', '2023', 7, '2023-03-15 02:17:25'),
+(27, '', '', 'Mar', '2023', 7, '2023-03-15 02:18:11'),
+(28, '', '', 'Mar', '2023', 7, '2023-03-15 02:18:45'),
+(29, '', '', 'Mar', '2023', 7, '2023-03-15 02:19:28'),
+(30, '', '', 'Mar', '2023', 7, '2023-03-15 02:19:45'),
+(31, '', '', 'Mar', '2023', 7, '2023-03-15 02:23:20'),
+(32, '', '', 'Mar', '2023', 7, '2023-03-15 02:23:25');
 
 --
 -- Indexes for dumped tables
@@ -475,6 +535,14 @@ ALTER TABLE `merek`
   ADD KEY `id_gambar` (`id_gambar`);
 
 --
+-- Indeks untuk tabel `pages`
+--
+ALTER TABLE `pages`
+  ADD PRIMARY KEY (`id_pages`),
+  ADD KEY `gambar_pages` (`gambar_pages`),
+  ADD KEY `id_creator` (`id_creator`);
+
+--
 -- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
@@ -519,7 +587,7 @@ ALTER TABLE `about`
 -- AUTO_INCREMENT untuk tabel `asset`
 --
 ALTER TABLE `asset`
-  MODIFY `id_asset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id_asset` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT untuk tabel `feedback`
@@ -531,7 +599,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT untuk tabel `gallery`
 --
 ALTER TABLE `gallery`
-  MODIFY `id_gallery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_gallery` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `global_setting`
@@ -558,6 +626,12 @@ ALTER TABLE `merek`
   MODIFY `id_merek` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
+-- AUTO_INCREMENT untuk tabel `pages`
+--
+ALTER TABLE `pages`
+  MODIFY `id_pages` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
@@ -579,7 +653,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `visitor`
 --
 ALTER TABLE `visitor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -630,6 +704,13 @@ ALTER TABLE `kategori`
 ALTER TABLE `merek`
   ADD CONSTRAINT `merek_ibfk_1` FOREIGN KEY (`id_creator`) REFERENCES `user` (`id_user`),
   ADD CONSTRAINT `merek_ibfk_2` FOREIGN KEY (`id_gambar`) REFERENCES `asset` (`id_asset`);
+
+--
+-- Ketidakleluasaan untuk tabel `pages`
+--
+ALTER TABLE `pages`
+  ADD CONSTRAINT `pages_ibfk_1` FOREIGN KEY (`id_creator`) REFERENCES `user` (`id_user`),
+  ADD CONSTRAINT `pages_ibfk_2` FOREIGN KEY (`gambar_pages`) REFERENCES `asset` (`id_asset`);
 
 --
 -- Ketidakleluasaan untuk tabel `produk`
