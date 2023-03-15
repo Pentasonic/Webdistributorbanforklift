@@ -264,6 +264,16 @@ class Admin extends CI_Controller
 			redirect('login');
 		}
 	}
+	public function setting_pages()
+	{
+		if ($this->session->userdata('logged_in')) {
+
+			$data['pages_data'] = $this->ays_model->getDataPages()->result();
+			$this->load->view('be/setting_pages', $data);
+		} else {
+			redirect('login');
+		}
+	}
 	public function new_slider()
 	{
 		if ($this->session->userdata('logged_in')) {
@@ -343,6 +353,18 @@ class Admin extends CI_Controller
 			);
 			$data['data_slider'] = $this->ays_model->getDataSliderWhere($where)->row();
 			$this->load->view('be/edit_slider', $data);
+		} else {
+			redirect('login');
+		}
+	}
+	public function edit_pages($id)
+	{
+		if ($this->session->userdata('logged_in')) {
+			$where = array(
+				"a.id_pages" => $id
+			);
+			$data['data_pages'] = $this->ays_model->getDataPagesWhere($where)->row();
+			$this->load->view('be/edit_pages', $data);
 		} else {
 			redirect('login');
 		}
@@ -549,6 +571,48 @@ class Admin extends CI_Controller
 			$this->ays_model->updateData('slider', $data, $where);
 
 			echo "<script>alert('Slider Berhasil Disimpan!');javascript:history.go(-2);</script>";
+		} else {
+			redirect('login');
+		}
+	}
+	public function EditPagesProcess()
+	{
+		if ($this->session->userdata('logged_in')) {
+			$image = $this->input->post('brand-logo-image-url');
+			$judul = $this->input->post('Epublic-judul');
+			$public_desc = $this->input->post('Epublic-desc');
+			$id_pages = $this->input->post('id_pages_edit');
+			$id = $this->session->userdata('id');
+			if (!empty($image)) {
+				
+				$datalogo = array(
+					"nama_asset" => $judul . ' Slider',
+					"lokasi" => $image,
+					"id_creator" => $id,
+					"created" => date('Y-m-d H:i:s'),
+					"updated" => date('Y-m-d H:i:s'),
+				);
+				$id_asset = $this->ays_model->saveDataId('asset', $datalogo);
+				$data = array(
+					"gambar_pages" => $id_asset,
+					"judul_pages" => $judul,
+					"deskripsi_pages" => $public_desc,
+					"id_creator" => $id
+				);
+			}else{
+
+				$data = array(
+					"judul_pages" => $judul,
+					"deskripsi_pages" => $public_desc,
+					"id_creator" => $id
+				);
+			}
+			$where = array(
+				"id_pages" => $id_pages
+			);
+			$this->ays_model->updateData('pages', $data, $where);
+
+			echo "<script>alert('Pages Berhasil Disimpan!');javascript:history.go(-2);</script>";
 		} else {
 			redirect('login');
 		}
@@ -887,6 +951,31 @@ class Admin extends CI_Controller
 			$response = array(
 				"response" => "success",
 				"dataDiterima" => 'status slider id ' . $id . ' diset menjadi ' . $status
+			);
+			echo json_encode($response);
+		} else {
+			redirect('login');
+		}
+	}
+	public function statusPages()
+	{
+		if ($this->session->userdata('logged_in')) {
+
+			$id = $this->input->post('id');
+			$status = $this->input->post('status');
+			$data = array(
+				"status" => $status,
+				"updated" => date('Y-m-d H:i:s'),
+				"id_creator" => $this->session->userdata('id')
+
+			);
+			$where = array(
+				"id_pages" => $id
+			);
+			$this->ays_model->updateData('pages', $data, $where);
+			$response = array(
+				"response" => "success",
+				"dataDiterima" => 'status pages id ' . $id . ' diset menjadi ' . $status
 			);
 			echo json_encode($response);
 		} else {

@@ -113,28 +113,32 @@
                     <div class="clients-wrap w-100 text-center pt-80">
                         <h5>BLOG & BERITA</h5>
                         <div class="row justify-content-center pt-30">
-                            <?php foreach($gallery_data->result() as $artikel){ ?>
+                            <?php
+                            $iterate = 0;
+                            for($i=count($gallery_data)-1;$i>=0;$i--){
+                                if($iterate <4){
+                                 ?>
                             <div class="col-md-6 col-sm-6 col-lg-3">
                                 <div class="post-box w-100">
                                     <div class="post-img overflow-hidden w-100">
-                                        <a href="<?php echo base_url() ?>site/artikelDetail/<?= $artikel->id_gallery; ?>" title=""><img class="img-fluid w-100" src="<?= base_url($artikel->lokasi)?>" alt="Post Image 1"></a>
+                                        <a href="<?php echo base_url() ?>site/artikelDetail/<?= $gallery_data[$i]['id_gallery']; ?>" title=""><img class="img-fluid w-100" src="<?= base_url($gallery_data[$i]['lokasi'])?>" alt="Post Image 1"></a>
                                     </div>
                                     <div class="post-info w-100" style="text-align: left;">
-                                        <a href="<?php echo base_url() ?>site/artikelDetail/<?= $artikel->id_gallery; ?>" style="text-align: left;margin-top:-15px;font-weight:600;"><?= $artikel->judul; ?></a href="">
+                                        <a href="<?php echo base_url() ?>site/artikelDetail/<?= $gallery_data[$i]['id_gallery']; ?>" style="text-align: left;margin-top:-15px;font-weight:600;"><?= $gallery_data[$i]['judul']; ?></a href="">
                                         <br>
                                         <span style="text-align: left;margin-top:-5px;font-size:12px;"><?php
-$words = explode(" ", $artikel->summary);
+$words = explode(" ", $gallery_data[$i]['summary']);
 $limited = implode(" ", array_splice($words, 0, 8));
 echo $limited;?></span>
                                         <br>
                                         <a style="font-size:11px;color:#ff7500;" href="">Baca Sekarang</a>
                                         <br>
                                         <img src="<?php echo base_url() ?>assets/frontend/images/icon/clock.png" alt="">
-                                        <span style="font-size:11px;color:#BFBEBE;"><?= date('d F Y', strtotime($artikel->created)); ?></span>
+                                        <span style="font-size:11px;color:#BFBEBE;"><?= date('d F Y', strtotime($gallery_data[$i]['created'])); ?></span>
                                     </div>
                                 </div>
                             </div>
-                                <?php } ?>
+                                <?php $iterate++; }} ?>
                         </div>
                     </div>
                 </div>

@@ -20,7 +20,8 @@ class Site extends CI_Controller
 		$whereGallery = array("status_publikasi" => "publik", "a.status" => "aktif");
 		$data['slider_data'] = $this->ays_model->getDataSliderWhere($where)->result();
 		$data['product_data'] = $this->ays_model->getDataProdukWhere($whereProduk);
-		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
+		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery)->result_array();
+		// echo var_dump($data['gallery_data'][0]);die();
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['merek_data'] = $this->ays_model->getDataMerek()->result();
 		// echo var_dump($data['about_data']);die();

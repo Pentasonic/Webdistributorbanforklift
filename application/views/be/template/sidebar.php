@@ -26,6 +26,7 @@
             <a class="collapse-item" href="<?php echo base_url(); ?>admin/setting_social">Setting Media Sosial</a>
             <a class="collapse-item" href="<?php echo base_url(); ?>admin/setting_public">Setting Media Publikasi</a>
             <a class="collapse-item" href="<?php echo base_url(); ?>admin/setting_merek">Setting Partner/ Merek</a>
+            <a class="collapse-item" href="<?php echo base_url(); ?>admin/setting_pages">Setting Pages</a>
         </div>
     </div>
 </li>
