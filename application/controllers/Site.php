@@ -26,6 +26,7 @@ class Site extends CI_Controller
 		$data['merek_data'] = $this->ays_model->getDataMerek()->result();
 		// echo var_dump($data['about_data']);die();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
+		$data['pages_data'] = $this->ays_model->getDataPagesOnly(13)->row();
 		$this->load->view('fe/homeContent', $data);
 	}
 	public function search(){
