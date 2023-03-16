@@ -28,7 +28,7 @@
                             <ul class="solutions-list mb-0 list-unstyled w-100">
                                 <li>
                                     <i class="">+</i>
-                                    <h4 class="mb-0">Press Ban Forklift Mobile, Kami datang langsung ke Lokasi anda untuk melakukan Press Ban. Sehingga Efisiensi Waktu dan Proses Bongkar Pasang hingga Proses Press dapat Dipantau, Cepat dan Praktis.</h4>
+                                    <h4 class="mb-0"><?= $pages_data_content->deskripsi_pages; ?></h4>
                                 </li>
                             </ul>
                         </div>

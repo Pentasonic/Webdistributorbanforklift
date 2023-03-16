@@ -35,7 +35,7 @@ $this->load->view('be/template/header');
             <div class="input-group-prepend">
                 <span class="input-group-text">Deskripsi gambar</span>
             </div>
-            <textarea name="Epublic-desc" class="form-control" aria-label="With textarea"><?= $data_pages->deskripsi_slider?></textarea>
+            <textarea name="Epublic-desc" class="form-control" aria-label="With textarea"><?= $data_pages->deskripsi_pages?></textarea>
         </div>
 </div>
 <div class="modal-footer">
