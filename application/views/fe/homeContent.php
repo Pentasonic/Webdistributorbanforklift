@@ -163,9 +163,7 @@ echo $limited;?></span>
                 <div class="row">
                     <div class="col-6 col-xs-6 col-sm-3 col-md-3 col-lg-3">
                         <div class="position-relative overflow-hidden w-100">
-                            <a href="<?php echo base_url() ?>spare-parts/spare-parts-forklift">
                                 <img style="border-radius: 5px;" src="<?php echo base_url() ?>assets/frontend/images/icon/press.png" width="100%" class="mb-4">
-                            </a>
                             <!-- <div class="serv-box-inner">
                                 <h3 class="mb-0"><a href="<?php echo base_url() ?>spare-parts/spare-parts-forklift" title="">Mobile Press Ban</a></h3>
                             </div> -->
@@ -173,9 +171,7 @@ echo $limited;?></span>
                     </div>
                     <div class="col-6 col-xs-6 col-sm-3 col-md-3 col-lg-3">
                         <div class="position-relative overflow-hidden w-100">
-                            <a href="<?php echo base_url() ?>katalog-forklift">
                                 <img style="border-radius: 5px;" src="<?php echo base_url() ?>assets/frontend/images/icon/layanan.png" width="100%" class="mb-4">
-                            </a>
                             <!-- <div class="serv-box-inner">
                                 <h3 class="mb-0"><a href="<?php echo base_url() ?>katalog-forklift" title="">Layanan Cepat</a></h3>
                             </div> -->
@@ -183,9 +179,7 @@ echo $limited;?></span>
                     </div>
                     <div class="col-6 col-xs-6 col-sm-3 col-md-3 col-lg-3">
                         <div class="position-relative overflow-hidden w-100">
-                            <a href="<?php echo base_url() ?>spare-parts/battery-forklift">
                                 <img style="border-radius: 5px;" src="<?php echo base_url() ?>assets/frontend/images/icon/pengiriman.png" width="100%" class="mb-4">
-                            </a>
                             <!-- <div class="serv-box-inner">
                                 <h3 class="mb-0"><a href="<?php echo base_url() ?>spare-parts/battery-forklift" title="">Gratis Pengiriman</a></h3>
                             </div> -->
@@ -193,9 +187,7 @@ echo $limited;?></span>
                     </div>
                     <div class="col-6 col-xs-6 col-sm-3 col-md-3 col-lg-3">
                         <div class="position-relative overflow-hidden w-100">
-                            <a href="<?php echo base_url() ?>spare-parts/attachment-forklift">
                                 <img style="border-radius: 5px;" src="<?php echo base_url() ?>assets/frontend/images/icon/asli.png" width="100%" class="mb-4">
-                            </a>
                             <!-- <div class="serv-box-inner">
                                 <h3 class="mb-0"><a href="<?php echo base_url() ?>spare-parts/attachment-forklift" title="">Keaslian Produk</a></h3>
                             </div> -->
