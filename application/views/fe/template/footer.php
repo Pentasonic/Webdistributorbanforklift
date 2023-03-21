@@ -19,9 +19,10 @@
                                 $account_data = json_decode($setting_data->footer_setting_global_medsos_list_array);
                                 $title = ["Twitter","Facebook","Instagram","Linkedin"];
                                 $class = ["fab fa-twitter","fab fa-facebook-f","fab fa-instagram","fab fa-linkedin"];
-                                for ($i = 0; $i < $account_count; $i++) { ?>
+                                for ($i = 0; $i < $account_count; $i++) { 
+                                    if($title[$i] != "Twitter"){?>
                                     <a href="<?php echo $account_data[$i]->url_link; ?>" title="<?= $title[$i]; ?>" target="_blank"><i class="<?= $class[$i]; ?>"></i></a>
-                                <?php } ?>
+                                <?php }} ?>
                             </div>
                         </div>
                         <div class="col-md-3">
