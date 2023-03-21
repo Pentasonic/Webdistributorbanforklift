@@ -79,7 +79,7 @@
             <div class="about-wrap style2 w-100">
                 <div class="row align-items-center justify-content-center">
                     <div class="col-12">
-                        <div class="about-us w-100" style="background: #e1e1e1 url('<?php echo base_url() ?>') bottom right no-repeat;">
+                        <div class="about-us w-100" style="background: #e1e1e1 url('<?= base_url($pages_data_tentang->lokasi); ?>') bottom right no-repeat;">
                             <h1 class="title-at-home">Prime Forklift Service</h1>
                             <h2 class=""><strong class="thm-clr d-block">Tentang Kami</strong></h2>
                             <p class="mt-3"><?php echo $about_data->deksripsi; ?>

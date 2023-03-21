@@ -47,6 +47,8 @@ $this->load->view('be/template/header');
             $("#size").text("Width : 600px x Height 800px");
         }else if(id_img == 5){
             $("#size").text("Width : 978px x Height 1000px");
+        }else if(id_img == 14){
+            $("#size").text("Width : 1200px x Height 530px");
         }else{
             $("#size").text("Width : 1200px x Height 372px");
         }
@@ -76,6 +78,19 @@ $this->load->view('be/template/header');
                     boundary: {
                         height: 1050,
                         width: 1000
+                    }
+                });
+            }else if(id_img == 14){
+                $("#size").text("Width : 1200px x Height 530px");
+                $cropLogo = $("#cropAreaLogo").croppie({
+                    enableExif: true,
+                    viewport: {
+                        width: 1200,
+                        height: 530,
+                    },
+                    boundary: {
+                        height: 550,
+                        width: 1250
                     }
                 });
             }else{

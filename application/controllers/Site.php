@@ -27,6 +27,7 @@ class Site extends CI_Controller
 		// echo var_dump($data['about_data']);die();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
 		$data['pages_data'] = $this->ays_model->getDataPagesOnly(13)->row();
+		$data['pages_data_tentang'] = $this->ays_model->getDataPagesOnly(14)->row();
 		$this->load->view('fe/homeContent', $data);
 	}
 	public function search(){
