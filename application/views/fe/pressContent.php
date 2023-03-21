@@ -8,7 +8,7 @@
             <div class="page-top-wrap w-100">
                 <h1 class="mb-0">Mobile Press Ban</h1>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="https://reviberkahmakmur.co.id/" title="">Beranda</a></li>
+                    <li class="breadcrumb-item"><a href="https://distributorbanforklift.com/" title="">Beranda</a></li>
                     <li class="breadcrumb-item active">Mobile Press Ban</li>
                 </ol>
             </div><!-- Page Top Wrap -->
