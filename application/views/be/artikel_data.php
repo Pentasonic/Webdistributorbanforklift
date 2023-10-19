@@ -22,6 +22,7 @@ $this->load->view('be/template/header');
                     <thead>
                         <tr>
                             <th>File</th>
+                            <th>Slug</th>
                             <th>Judul</th>
                             <th>User</th>
                             <th>Tanggal</th>
@@ -33,6 +34,7 @@ $this->load->view('be/template/header');
                     <tfoot>
                         <tr>
                             <th>File</th>
+                            <th>Slug</th>
                             <th>Judul</th>
                             <th>User</th>
                             <th>Tanggal</th>
@@ -45,6 +47,7 @@ $this->load->view('be/template/header');
                         <?php foreach ($artikel_data as $gallery) { ?>
                             <tr>
                                 <td><a class="btn btn-info" href="<?php echo base_url() . $gallery->lokasi; ?>"><i class="fas fa-eye"> Lihat</a></td>
+                                <td><?php echo $gallery->slug; ?></td>
                                 <td><?php echo $gallery->judul; ?></td>
                                 <td><?php echo $gallery->nama_user; ?></td>
                                 <td><?php echo $gallery->created; ?></td>

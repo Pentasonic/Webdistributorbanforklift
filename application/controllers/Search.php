@@ -22,7 +22,7 @@ class Search extends CI_Controller
 		if(isset($brand) && isset($search)){
 			$whereGallery = array("status_publikasi" => "publik", "a.status" => "aktif");
 			$data['merek_data'] = $this->ays_model->getDataMerek()->result();
-			$data['product_data'] = $this->ays_model->getDataProdukWhereSearch($brand, $search);
+			$data['product_data'] = $this->ays_model->getDataProdukWhereSearchView($brand, $search);
 			// $data['product_data_p1'] = $this->ays_model->getDataProdukWherePage($page, null);
 			$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
 			$data['about_data'] = $this->ays_model->getDataAbout()->row();
@@ -33,7 +33,7 @@ class Search extends CI_Controller
 		}else{
 			$whereGallery = array("status_publikasi" => "publik", "a.status" => "aktif");
 			$data['merek_data'] = $this->ays_model->getDataMerek()->result();
-			$data['product_data'] = $this->ays_model->getDataProdukWhereSearch($brand, $search);
+			$data['product_data'] = $this->ays_model->getDataProdukWhereSearchView($brand, $search);
 			// $data['product_data_p1'] = $this->ays_model->getDataProdukWherePage($page, null);
 			$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
 			$data['about_data'] = $this->ays_model->getDataAbout()->row();

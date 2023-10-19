@@ -50,7 +50,7 @@ class Ays_model extends CI_Model
     }
     public function getDataProdukRandom()
     {
-        $produk = $this->db->select('*, a.status as sts')->from("produk a")
+        $produk = $this->db->select('*, a.status as sts')->from("produk_view a")
             ->join("user b", "a.id_creator=b.id_user")
             ->join("asset c", "a.id_gambar=c.id_asset")
             ->join("merek e","a.id_merek=e.id_merek")
@@ -62,6 +62,18 @@ class Ays_model extends CI_Model
     public function getDataProdukWhere($where)
     {
         $produk = $this->db->select('*,a.nama_produk as name')->from("produk a")
+            ->join("user b", "a.id_creator=b.id_user")
+            ->join("asset c", "a.id_gambar=c.id_asset")
+            ->join("kategori d","a.id_kategori=d.id_kategori")
+            ->join("merek e","a.id_merek=e.id_merek")
+            ->join("jenis_produk f","a.id_jenis_produk=f.id_jenis_produk")
+            ->where($where)
+            ->get();
+        return $produk;
+    }
+    public function getDataProdukWhereView($where)
+    {
+        $produk = $this->db->select('*,a.nama_produk as name')->from("produk_view a")
             ->join("user b", "a.id_creator=b.id_user")
             ->join("asset c", "a.id_gambar=c.id_asset")
             ->join("kategori d","a.id_kategori=d.id_kategori")
@@ -92,22 +104,43 @@ class Ays_model extends CI_Model
             ->get();
         return $produk;
     }
-    public function getDataProdukWhereSearch($idMerek,$search)
+    public function getDataProdukWherePageView($page, $id)
+    {
+        $produk_per_page = 12;
+        if($id != null){
+
+            $whereProduk = array("status_publikasi" => "publik", "a.status" => "aktif", "a.id_jenis_produk" => $id);
+        }else{
+
+            $whereProduk = array("status_publikasi" => "publik", "a.status" => "aktif");
+        }
+        $produk = $this->db->select('*,a.nama_produk as name')->from("produk_view a")
+            ->join("user b", "a.id_creator=b.id_user")
+            ->join("asset c", "a.id_gambar=c.id_asset")
+            ->join("kategori d","a.id_kategori=d.id_kategori")
+            ->join("merek e","a.id_merek=e.id_merek")
+            ->join("jenis_produk f","a.id_jenis_produk=f.id_jenis_produk")
+            ->where($whereProduk)
+            ->limit($produk_per_page, (($produk_per_page*$page)-$produk_per_page))
+            ->get();
+        return $produk;
+    }
+    public function getDataProdukWhereSearchView($idMerek,$search)
     {
         if($idMerek){
-            $produk = $this->db->query("SELECT * FROM produk a join user b  on a.id_creator=b.id_user join asset c on a.id_gambar=c.id_asset join kategori d on a.id_kategori=d.id_kategori join merek e on a.id_merek=e.id_merek WHERE a.status='aktif' AND a.id_merek=".$idMerek."");
+            $produk = $this->db->query("SELECT * FROM produk_view a join user b  on a.id_creator=b.id_user join asset c on a.id_gambar=c.id_asset join kategori d on a.id_kategori=d.id_kategori join merek e on a.id_merek=e.id_merek WHERE a.status='aktif' AND a.id_merek=".$idMerek."");
             return $produk;
             
         }else if($search){
-            $produk = $this->db->query("SELECT * FROM produk a join user b  on a.id_creator=b.id_user join asset c on a.id_gambar=c.id_asset join kategori d on a.id_kategori=d.id_kategori join merek e on a.id_merek=e.id_merek WHERE a.status='aktif' AND a.nama_produk LIKE '%".$search."%'");
+            $produk = $this->db->query("SELECT * FROM produk_view a join user b  on a.id_creator=b.id_user join asset c on a.id_gambar=c.id_asset join kategori d on a.id_kategori=d.id_kategori join merek e on a.id_merek=e.id_merek WHERE a.status='aktif' AND a.nama_produk LIKE '%".$search."%'");
             return $produk;
             
         }else if($idMerek && $search){
-            $produk = $this->db->query("SELECT * FROM produk a join user b  on a.id_creator=b.id_user join asset c on a.id_gambar=c.id_asset join kategori d on a.id_kategori=d.id_kategori join merek e on a.id_merek=e.id_merek WHERE a.status='aktif' AND a.id_merek=".$idMerek." AND a.nama_produk LIKE '%".$search."%'");
+            $produk = $this->db->query("SELECT * FROM produk_view a join user b  on a.id_creator=b.id_user join asset c on a.id_gambar=c.id_asset join kategori d on a.id_kategori=d.id_kategori join merek e on a.id_merek=e.id_merek WHERE a.status='aktif' AND a.id_merek=".$idMerek." AND a.nama_produk LIKE '%".$search."%'");
             return $produk;
             
         }else{
-            $produk = $this->db->query("SELECT * FROM produk a join user b  on a.id_creator=b.id_user join asset c on a.id_gambar=c.id_asset join kategori d on a.id_kategori=d.id_kategori join merek e on a.id_merek=e.id_merek WHERE a.status='aktif'");
+            $produk = $this->db->query("SELECT * FROM produk_view a join user b  on a.id_creator=b.id_user join asset c on a.id_gambar=c.id_asset join kategori d on a.id_kategori=d.id_kategori join merek e on a.id_merek=e.id_merek WHERE a.status='aktif'");
             return $produk;
 
         }
@@ -124,6 +157,14 @@ class Ays_model extends CI_Model
     public function getDataGalleryWhere($where)
     {
         $gallery = $this->db->select('*, a.status as sts')->from("gallery a")
+            ->join("user b", "a.id_creator=b.id_user")
+            ->join("asset c", "a.id_asset=c.id_asset")
+            ->where($where)->get();
+        return $gallery;
+    }
+    public function getDataGalleryWhereView($where)
+    {
+        $gallery = $this->db->select('*, a.status as sts')->from("gallery_view a")
             ->join("user b", "a.id_creator=b.id_user")
             ->join("asset c", "a.id_asset=c.id_asset")
             ->where($where)->get();
@@ -312,6 +353,24 @@ class Ays_model extends CI_Model
     { // via Form/Serialize
 
     }
+
+    public function cekSlug($tableName, $slug)
+    {
+        // Validasi dan bersihkan $slug jika diperlukan
+
+        $query = $this->db->select('*')->from($tableName)->where('slug', $slug)->get();
+
+        // Periksa apakah ada hasil yang ditemukan
+        if ($query && $query->num_rows() > 0) {
+            // Slug telah digunakan
+            return true;
+        } else {
+            // Slug belum digunakan
+            return false;
+        }
+    }
+
+
 
     // function Delete Data (Only Status Show)
 

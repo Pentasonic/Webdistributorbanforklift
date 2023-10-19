@@ -15,8 +15,17 @@ $this->load->view('be/template/header');
             <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Judul Artikel</span>
             </div>
-            <input type="hidden" name="id_gallery" value="<?= $this->uri->segment(3); ?>">
             <input name="judul" type="text" class="form-control" placeholder="Judul Artikel" aria-label="Judul Artikel" aria-describedby="basic-addon1" value="<?= $gallery_data->judul; ?>">
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Slug Artikel</span>
+            </div>
+            <input type="hidden" name="id_gallery" value="<?= $this->uri->segment(3); ?>">
+            <input name="slug" id="slugCheck" type="text" class="form-control" placeholder="Slug Artikel" aria-label="Slug Artikel" aria-describedby="basic-addon1" value="<?= $gallery_data->slug; ?>">
+            <div id="alert">
+                <span style="color:red;">Slug Telah digunakan!</span>
+            </div>
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -46,9 +55,10 @@ $this->load->view('be/template/header');
         </center>
 </div>
 <div class="modal-footer">
-    <input type="submit" class="btn btn-primary" value="Simpan">
+    <input id="ck" type="submit" class="btn btn-primary" value="Simpan">
     </form>
     <script>
+        $("#alert").hide();
         $("#selesaiLogo").hide();
         $("#image-upload-slider").on('change', function() {
             // $("#logoShow").hide();
@@ -98,6 +108,31 @@ $this->load->view('be/template/header');
             });
         });
         tinymce.init({selector:'textarea',content_style:'width: 100%; max-width: 1200px;'});
+        $("#slugCheck").keyup(function(){
+            var slug = $("#slugCheck").val();
+            if(slug !== ''){
+
+                $.ajax({
+                type: 'POST',
+                url: '<?php echo base_url() ?>admin/cekSlug',
+                data: { slug: slug,tabel:'gallery' },
+                dataType: 'json',
+                success: function(data) {
+                    if (data.used) {
+                        console.log("Slug sudah digunakan!");
+                        $("#alert").show(); 
+                        $("#ck").hide()
+                        // Slug telah digunakan, lakukan sesuai kebutuhan Anda
+                    } else {
+                        console.log("Slug tersedia");
+                        $("#ck").show()
+                        $("#alert").hide(); 
+                        // Slug belum digunakan, lakukan sesuai kebutuhan Anda
+                    }
+                }
+                });
+            }
+        });
     </script>
     <?php
     $this->load->view('be/template/footer');

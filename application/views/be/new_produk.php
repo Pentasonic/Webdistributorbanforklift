@@ -19,6 +19,15 @@ $this->load->view('be/template/header');
         </div>
         <div class="input-group mb-3">
             <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Slug Produk</span>
+            </div>
+            <input id="slugCheck" name="produk-slug" type="text" class="form-control" placeholder="Slug Produk" aria-label="Slug Produk" aria-describedby="basic-addon1" value="">
+            <div id="alert">
+                <span style="color:red;">Slug Telah digunakan!</span>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
                 <span class="input-group-text" id="basic-addon1">Nama Produk</span>
             </div>
             <input name="produk-nama" type="text" class="form-control" placeholder="Nama Produk" aria-label="Nama Produk" aria-describedby="basic-addon1" value="">
@@ -87,9 +96,10 @@ $this->load->view('be/template/header');
         </center>
 </div>
 <div class="modal-footer">
-    <input type="submit" class="btn btn-primary" value="Simpan">
+    <input id="ck" type="submit" class="btn btn-primary" value="Simpan">
     </form>
     <script>
+        $("#alert").hide()
         $("#selesaiLogo").hide();
         $("#image-upload-slider").on('change', function() {
             // $("#logoShow").hide();
@@ -139,6 +149,32 @@ $this->load->view('be/template/header');
             });
         });
         tinymce.init({selector:'textarea',content_style:'width: 100%; max-width: 1200px;'});
+        $("#slugCheck").keyup(function(){
+            var slug = $("#slugCheck").val();
+            if(slug != ''){
+
+                    $.ajax({
+                    type: 'POST',
+                    url: '<?php echo base_url() ?>admin/cekSlug',
+                    data: { slug: slug,tabel:'produk' },
+                    dataType: 'json',
+                    success: function(data) {
+                        if (data.used) {
+                            console.log("Slug sudah digunakan!");
+                            $("#alert").show(); 
+                            $("#ck").hide()
+                            // Slug telah digunakan, lakukan sesuai kebutuhan Anda
+                        } else {
+                            console.log("Slug tersedia");
+                            $("#ck").show()
+                            $("#alert").hide(); 
+                            // Slug belum digunakan, lakukan sesuai kebutuhan Anda
+                        }
+                    }
+                });
+            }
+
+        });
     </script>
     <?php
     $this->load->view('be/template/footer');

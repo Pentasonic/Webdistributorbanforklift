@@ -23,6 +23,7 @@ $this->load->view('be/template/header');
                         <tr>
                             <th>Gambar</th>
                             <th>Kode</th>
+                            <th>Slug</th>
                             <th>Nama Produk</th>
                             <th>summary_deskripsi</th>
                             <th>Harga</th>
@@ -37,6 +38,7 @@ $this->load->view('be/template/header');
                         <tr>
                             <th>Gambar</th>
                             <th>Kode</th>
+                            <th>Slug</th>
                             <th>Nama Produk</th>
                             <th>summary_deskripsi</th>
                             <th>Harga</th>
@@ -52,6 +54,7 @@ $this->load->view('be/template/header');
                             <tr>
                                 <td><a class="btn btn-info" href="<?php echo base_url() . $produk->lokasi; ?>"><i class="fas fa-eye"> Lihat</a></td>
                                 <th><?php echo $produk->kode_produk; ?></th>
+                                <th><?php echo $produk->slug; ?></th>
                                 <th><?php echo $produk->nama_produk; ?></th>
                                 <th><?php echo $produk->summary_deskripsi; ?></th>
                                 <th><?php echo $produk->harga_produk; ?></th>

@@ -623,6 +623,7 @@ class Admin extends CI_Controller
 		if ($this->session->userdata('logged_in')) {
 			$image = $this->input->post('brand-logo-image-url');
 			$kode = $this->input->post('produk-kode');
+			$slug = $this->input->post('produk-slug');
 			$merek = $this->input->post('merek');
 			$kategori = $this->input->post('kategori');
 			$jenis = $this->input->post('jenis');
@@ -646,6 +647,7 @@ class Admin extends CI_Controller
 						"id_gambar" => $id_asset,
 						"id_creator" => $id,
 						"kode_produk" => $kode,
+						"slug" => $slug,
 						"id_merek" => $merek,
 						"id_kategori" => $kategori,
 						"id_jenis_produk" => $jenis,
@@ -673,6 +675,7 @@ class Admin extends CI_Controller
 		if ($this->session->userdata('logged_in')) {
 			$image = $this->input->post('brand-logo-image-url');
 			$kode = $this->input->post('produk-kode');
+			$slug = $this->input->post('produk-slug');
 			$merek = $this->input->post('merek');
 			$kategori = $this->input->post('kategori');
 			$jenis = $this->input->post('jenis');
@@ -697,6 +700,7 @@ class Admin extends CI_Controller
 						"id_gambar" => $id_asset,
 						"id_creator" => $id,
 						"kode_produk" => $kode,
+						"slug" => $slug,
 						"id_merek" => $merek,
 						"id_kategori" => $kategori,
 						"id_jenis_produk" => $jenis,
@@ -717,6 +721,7 @@ class Admin extends CI_Controller
 				$data = array(
 					"id_creator" => $id,
 					"kode_produk" => $kode,
+					"slug" => $slug,
 					"id_merek" => $merek,
 					"id_kategori" => $kategori,
 					"id_jenis_produk" => $jenis,
@@ -743,6 +748,7 @@ class Admin extends CI_Controller
 		if ($this->session->userdata('logged_in')) {
 			$image = $this->input->post('brand-logo-image-url');
 			$judul = $this->input->post('judul');
+			$slug = $this->input->post('slug');
 			$summary = $this->input->post('summary');
 			$desc = $this->input->post('artikel-full');
 
@@ -760,6 +766,7 @@ class Admin extends CI_Controller
 						"id_asset" => $id_asset,
 						"id_creator" => $id,
 						"judul" => $judul,
+						"slug" => $slug,
 						"summary" => $summary,
 						"deskripsi_gallery" => $desc,
 						"created" => date('Y-m-d H:i:s'),
@@ -860,6 +867,7 @@ class Admin extends CI_Controller
 		if ($this->session->userdata('logged_in')) {
 			$image = $this->input->post('brand-logo-image-url');
 			$judul = $this->input->post('judul');
+			$slug = $this->input->post('slug');
 			$summary = $this->input->post('summary');
 			$desc = $this->input->post('artikel-full');
 			$id_gallery = $this->input->post('id_gallery');
@@ -881,6 +889,7 @@ class Admin extends CI_Controller
 						"id_asset" => $id_asset,
 						"id_creator" => $id,
 						"judul" => $judul,
+						"slug" => $slug,
 						"summary" => $summary,
 						"deskripsi_gallery" => $desc,
 						"created" => date('Y-m-d H:i:s'),
@@ -892,6 +901,7 @@ class Admin extends CI_Controller
 				$data = array(
 					"id_creator" => $id,
 					"judul" => $judul,
+					"slug" => $slug,
 					"summary" => $summary,
 					"deskripsi_gallery" => $desc,
 					"created" => date('Y-m-d H:i:s'),
@@ -1374,4 +1384,21 @@ $where = array(
 			redirect('login');
 		}
 	}
+
+	public function cekSlug()
+	{
+		$slug = $this->input->post('slug');
+		$tabel = $this->input->post('tabel');
+
+		// Validasi dan bersihkan $slug jika diperlukan
+
+		$query = $this->ays_model->cekSlug($tabel, $slug);
+
+		if ($query) {
+			echo json_encode(['used' => true]);
+		} else {
+			echo json_encode(['used' => false]);
+		}
+	}
+
 }

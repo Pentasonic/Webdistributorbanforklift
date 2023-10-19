@@ -19,8 +19,8 @@ class Site extends CI_Controller
 		$whereProduk = array("status_publikasi" => "publik", "a.status" => "aktif");
 		$whereGallery = array("status_publikasi" => "publik", "a.status" => "aktif");
 		$data['slider_data'] = $this->ays_model->getDataSliderWhere($where)->result();
-		$data['product_data'] = $this->ays_model->getDataProdukWhere($whereProduk);
-		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery)->result_array();
+		$data['product_data'] = $this->ays_model->getDataProdukWhereView($whereProduk);
+		$data['gallery_data'] = $this->ays_model->getDataGalleryWhereView($whereGallery)->result_array();
 		// echo var_dump($data['gallery_data'][0]);die();
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['merek_data'] = $this->ays_model->getDataMerek()->result();
@@ -36,8 +36,8 @@ class Site extends CI_Controller
 		if(isset($brand) && isset($search)){
 			$whereGallery = array("status_publikasi" => "publik", "a.status" => "aktif");
 			$data['merek_data'] = $this->ays_model->getDataMerek()->result();
-			$data['product_data'] = $this->ays_model->getDataProdukWhereSearch($brand,$search);
-			$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
+			$data['product_data'] = $this->ays_model->getDataProdukWhereSearchView($brand,$search);
+			$data['gallery_data'] = $this->ays_model->getDataGalleryWhereView($whereGallery);
 			$data['about_data'] = $this->ays_model->getDataAbout()->row();
 			$data['setting_data'] = $this->ays_model->getDataSetting()->row();
 			$this->load->view('fe/katalogContent', $data);
@@ -45,8 +45,8 @@ class Site extends CI_Controller
 		}else{
 			$whereGallery = array("status_publikasi" => "publik", "a.status" => "aktif");
 			$data['merek_data'] = $this->ays_model->getDataMerek()->result();
-			$data['product_data'] = $this->ays_model->getDataProdukWhereSearch($brand,$search);
-			$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
+			$data['product_data'] = $this->ays_model->getDataProdukWhereSearchView($brand,$search);
+			$data['gallery_data'] = $this->ays_model->getDataGalleryWhereView($whereGallery);
 			$data['about_data'] = $this->ays_model->getDataAbout()->row();
 			$data['setting_data'] = $this->ays_model->getDataSetting()->row();
 			$this->load->view('fe/katalogContent', $data);
@@ -65,9 +65,9 @@ class Site extends CI_Controller
 		$whereProduk = array("status_publikasi" => "publik", "a.status" => "aktif");
 		$whereGallery = array("status_publikasi" => "publik", "a.status" => "aktif");
 		$data['merek_data'] = $this->ays_model->getDataMerek()->result();
-		$data['product_data'] = $this->ays_model->getDataProdukWhere($whereProduk);
-		$data['product_data_p1'] = $this->ays_model->getDataProdukWherePage($page, null);
-		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
+		$data['product_data'] = $this->ays_model->getDataProdukWhereView($whereProduk);
+		$data['product_data_p1'] = $this->ays_model->getDataProdukWherePageView($page, null);
+		$data['gallery_data'] = $this->ays_model->getDataGalleryWhereView($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
 		$data['pages_data'] = $this->ays_model->getDataPagesOnly(9)->row();
@@ -83,9 +83,9 @@ class Site extends CI_Controller
 		$whereProduk = array("status_publikasi" => "publik", "a.status" => "aktif", "a.id_jenis_produk" => "1");
 		$whereGallery = array("status_publikasi" => "publik", "a.status" => "aktif");
 		$data['merek_data'] = $this->ays_model->getDataMerek()->result();
-		$data['product_data'] = $this->ays_model->getDataProdukWhere($whereProduk);
-		$data['product_data_p1'] = $this->ays_model->getDataProdukWherePage($page, 1);
-		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
+		$data['product_data'] = $this->ays_model->getDataProdukWhereView($whereProduk);
+		$data['product_data_p1'] = $this->ays_model->getDataProdukWherePageView($page, 1);
+		$data['gallery_data'] = $this->ays_model->getDataGalleryWhereView($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
 		$data['pages_data'] = $this->ays_model->getDataPagesOnly(1)->row();
@@ -102,9 +102,9 @@ class Site extends CI_Controller
 		$whereProduk = array("status_publikasi" => "publik", "a.status" => "aktif", "a.id_jenis_produk" => "2");
 		$whereGallery = array("status_publikasi" => "publik", "a.status" => "aktif");
 		$data['merek_data'] = $this->ays_model->getDataMerek()->result();
-		$data['product_data'] = $this->ays_model->getDataProdukWhere($whereProduk);
-		$data['product_data_p1'] = $this->ays_model->getDataProdukWherePage($page, 2);
-		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
+		$data['product_data'] = $this->ays_model->getDataProdukWhereView($whereProduk);
+		$data['product_data_p1'] = $this->ays_model->getDataProdukWherePageView($page, 2);
+		$data['gallery_data'] = $this->ays_model->getDataGalleryWhereView($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
 		$data['pages_data'] = $this->ays_model->getDataPagesOnly(2)->row();
@@ -120,9 +120,9 @@ class Site extends CI_Controller
 		$whereProduk = array("status_publikasi" => "publik", "a.status" => "aktif", "a.id_jenis_produk" => "3");
 		$whereGallery = array("status_publikasi" => "publik", "a.status" => "aktif");
 		$data['merek_data'] = $this->ays_model->getDataMerek()->result();
-		$data['product_data'] = $this->ays_model->getDataProdukWhere($whereProduk);
-		$data['product_data_p1'] = $this->ays_model->getDataProdukWherePage($page, 3);
-		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
+		$data['product_data'] = $this->ays_model->getDataProdukWhereView($whereProduk);
+		$data['product_data_p1'] = $this->ays_model->getDataProdukWherePageView($page, 3);
+		$data['gallery_data'] = $this->ays_model->getDataGalleryWhereView($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
 		$data['pages_data'] = $this->ays_model->getDataPagesOnly(3)->row();
@@ -132,8 +132,8 @@ class Site extends CI_Controller
 	{
 		$whereProduk = array("status_publikasi" => "publik", "a.status" => "aktif");
 		$whereGallery = array("status_publikasi" => "publik", "a.status" => "aktif");
-		$data['product_data'] = $this->ays_model->getDataProdukWhere($whereProduk);
-		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
+		$data['product_data'] = $this->ays_model->getDataProdukWhereView($whereProduk);
+		$data['gallery_data'] = $this->ays_model->getDataGalleryWhereView($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
 		$data['pages_data'] = $this->ays_model->getDataPagesOnly(4)->row();
@@ -145,10 +145,10 @@ class Site extends CI_Controller
 		$where = array(
 			"id_produk" => $id
 		);
-		$data['data_produk'] = $this->ays_model->getDataProdukWhere($where)->row();
+		$data['data_produk'] = $this->ays_model->getDataProdukWhereView($where)->row();
 		$data['data_produk_terkait'] = $this->ays_model->getDataProdukRandom();
 		$whereGallery = array("status_publikasi" => "publik", "a.status" => "aktif");
-		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
+		$data['gallery_data'] = $this->ays_model->getDataGalleryWhereView($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
 		$data['pages_data'] = $this->ays_model->getDataPagesOnly(10)->row();
@@ -165,9 +165,9 @@ class Site extends CI_Controller
 		$where = array(
 			"id_produk" => $id
 		);
-		$data['data_produk'] = $this->ays_model->getDataProdukWhere($where)->row();
+		$data['data_produk'] = $this->ays_model->getDataProdukWhereView($where)->row();
 		$whereGallery = array("status_publikasi" => "publik", "a.status" => "aktif");
-		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
+		$data['gallery_data'] = $this->ays_model->getDataGalleryWhereView($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
 		$data['pages_data'] = $this->ays_model->getDataPagesOnly(11)->row();
@@ -177,8 +177,8 @@ class Site extends CI_Controller
 	{
 		$whereProduk = array("status_publikasi" => "publik", "a.status" => "aktif");
 		$whereGallery = array("status_publikasi" => "publik", "a.status" => "aktif");
-		$data['product_data'] = $this->ays_model->getDataProdukWhere($whereProduk);
-		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
+		$data['product_data'] = $this->ays_model->getDataProdukWhereView($whereProduk);
+		$data['gallery_data'] = $this->ays_model->getDataGalleryWhereView($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
 		$data['pages_data'] = $this->ays_model->getDataPagesOnly(6)->row();
@@ -188,8 +188,8 @@ class Site extends CI_Controller
 	{
 		$whereProduk = array("status_publikasi" => "publik", "a.status" => "aktif");
 		$whereGallery = array("id_gallery" => $id);
-		$data['product_data'] = $this->ays_model->getDataProdukWhere($whereProduk);
-		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery)->row();
+		$data['product_data'] = $this->ays_model->getDataProdukWhereView($whereProduk);
+		$data['gallery_data'] = $this->ays_model->getDataGalleryWhereView($whereGallery)->row();
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
 		$this->load->view('fe/artikelDetailContent',$data);
@@ -198,8 +198,8 @@ class Site extends CI_Controller
 	{
 		$whereProduk = array("status_publikasi" => "publik", "a.status" => "aktif");
 		$whereGallery = array("status_publikasi" => "publik", "a.status" => "aktif");
-		$data['product_data'] = $this->ays_model->getDataProdukWhere($whereProduk);
-		$data['gallery_data'] = $this->ays_model->getDataGalleryWhere($whereGallery);
+		$data['product_data'] = $this->ays_model->getDataProdukWhereView($whereProduk);
+		$data['gallery_data'] = $this->ays_model->getDataGalleryWhereView($whereGallery);
 		$data['about_data'] = $this->ays_model->getDataAbout()->row();
 		$data['setting_data'] = $this->ays_model->getDataSetting()->row();
 		$data['pages_data'] = $this->ays_model->getDataPagesOnly(7)->row();
@@ -216,8 +216,8 @@ class Site extends CI_Controller
 				"status" => 'aktif'
 			);
 			$whereProduk = array("status_publikasi" => "publik", "a.status" => "aktif", "id_produk" => $id);
-			$data['slider_data'] = $this->ays_model->getDataSliderWhere($where)->result();
-			$data['product_data'] = $this->ays_model->getDataProdukWhere($whereProduk)->row();
+			$data['slider_data'] = $this->ays_model->getDataSliderWhereView($where)->result();
+			$data['product_data'] = $this->ays_model->getDataProdukWhereView($whereProduk)->row();
 			$data['setting_data'] = $this->ays_model->getDataSetting()->row();
 			// echo var_dump($data['product_data']);die;
 			$this->load->view('fe/detail', $data);
