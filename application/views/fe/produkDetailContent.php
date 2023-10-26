@@ -41,7 +41,7 @@
 
                                 <div><?= $data_produk->full_deskripsi; ?></div>
 
-                                <a href="<?php echo base_url() ?>site/cekHarga/<?= $this->uri->segment(3) ?>" class="thm-btn thm-bg mb-20 mt-20" id="submit" type="button"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp; Cek Harga</a>
+                                <a href="<?php echo base_url() ?>harga/<?= $this->uri->segment(2) ?>" class="thm-btn thm-bg mb-20 mt-20" id="submit" type="button"><i class="fas fa-shopping-cart"></i>&nbsp;&nbsp; Cek Harga</a>
 
                             </div>
                         </div>
@@ -64,10 +64,10 @@
                             <div class="shop-img w-100 position-relative overflow-hidden">
                                 <img class="img-fluid w-100" src="<?= base_url($terkait->lokasi) ?>" alt="Shop Image 1">
 
-                                <a href="<?php echo base_url() ?>site/produkDetail/<?= $terkait->id_produk; ?>" title="">Detail Produk</a>
+                                <a href="<?php echo base_url() ?>produk/<?= $terkait->id_produk; ?>" title="">Detail Produk</a>
                             </div>
                             <div class="shop-info w-100">
-                                <h3 class="mb-0"><a href="<?php echo base_url() ?>site/produkDetail/<?= $terkait->id_produk; ?>" title=""><?= $terkait->nama_produk; ?></a></h3>
+                                <h3 class="mb-0"><a href="<?php echo base_url() ?>produk/<?= $terkait->id_produk; ?>" title=""><?= $terkait->nama_produk; ?></a></h3>
 
                                 <span class="text-muted"><?= $terkait->nama_merek; ?></span>
 

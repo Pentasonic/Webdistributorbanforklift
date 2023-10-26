@@ -2,13 +2,13 @@
 <div id="stickyTools">
     <div class="capsuleRed">
         <br>
-        <a href="<?php echo base_url() ?>site/katalog" data-toggle="tooltip" data-placement="left" title="cart">
+        <a href="<?php echo base_url() ?>katalog" data-toggle="tooltip" data-placement="left" title="cart">
             <span><img src="<?php echo base_url() ?>assets/frontend/images/icon/cart.png" alt="logo">
                 <br>
                 <p class="hm-clr">Buy Parts</p>
             </span></a>
 
-        <a href="<?php echo base_url() ?>site/hubungi" data-toggle="tooltip" data-placement="left" title="form">
+        <a href="<?php echo base_url() ?>hubungi" data-toggle="tooltip" data-placement="left" title="form">
             <span><img src="<?php echo base_url() ?>assets/frontend/images/icon/form.png" alt="logo">
                 <br>
                 <p class="hm-clr">Ask Quotes</p>

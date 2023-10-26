@@ -67,10 +67,10 @@
                                     <div class="shop-img w-100 position-relative overflow-hidden">
                                         <img class="img-fluid w-100" src="<?= base_url($produk->lokasi) ?>" alt="<?= base_url($produk->lokasi) ?>">
 
-                                        <a href="<?php echo base_url() ?>site/produkDetail/<?= $produk->id_produk; ?>" title="">Detail Produk</a>
+                                        <a href="<?php echo base_url() ?>produk/<?= $produk->id_produk; ?>" title="">Detail Produk</a>
                                     </div>
                                     <div class="shop-info w-100">
-                                        <h3 class="mb-0"><a href="<?php echo base_url() ?>site/produkDetail/<?= $produk->id_produk; ?>" title=""><?= $produk->nama_produk; ?></a></h3>
+                                        <h3 class="mb-0"><a href="<?php echo base_url() ?>produk/<?= $produk->id_produk; ?>" title=""><?= $produk->nama_produk; ?></a></h3>
 
                                         <span class="text-muted"><?= $produk->nama_merek; ?></span>
 

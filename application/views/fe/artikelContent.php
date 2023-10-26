@@ -24,10 +24,10 @@
                     <div class="col-md-6 col-sm-6 col-lg-4">
                         <div class="post-box w-100 text-center">
                             <div class="post-img overflow-hidden w-100">
-                                <a href="<?php echo base_url() ?>site/artikelDetail/<?= $artikel->id_gallery; ?>" title=""><img class="img-fluid w-100" src="<?= base_url($artikel->lokasi)?>" alt="Post Image 1"></a>
+                                <a href="<?php echo base_url() ?>artikel/<?= $artikel->id_gallery; ?>" title=""><img class="img-fluid w-100" src="<?= base_url($artikel->lokasi)?>" alt="Post Image 1"></a>
                             </div>
                             <div class="post-info w-100">
-                                <h3 class="mb-0"><a href="<?php echo base_url() ?>site/artikelDetail/<?= $artikel->id_gallery; ?>" title=""><?= $artikel->judul; ?></a></h3>
+                                <h3 class="mb-0"><a href="<?php echo base_url() ?>artikel/<?= $artikel->id_gallery; ?>" title=""><?= $artikel->judul; ?></a></h3>
                                 <p class="mb-0">
                                 <p><?php
 $words = explode(" ", $artikel->summary);

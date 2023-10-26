@@ -2,7 +2,7 @@
     <div class="filter-form">
         <h4>Kategori Produk</h4>
         <ul class="list-unstyled">
-            <li class="menu-item-has-children"><a href="<?php echo base_url() ?>site/forklift" title="" <?= ($this->uri->segment(2)== "forklift")? "class='active'":"" ?>>Ban Forklift</a>
+            <li class="menu-item-has-children"><a href="<?php echo base_url() ?>forklift" title="" <?= ($this->uri->segment(2)== "forklift")? "class='active'":"" ?>>Ban Forklift</a>
                 <ul class="mb-0 list-unstyled">
                     <!-- <li>
                         <a href="https://distributorbanforklift.com/forklift/forklift-toyota/toyota-all" title="">Forklift Toyota</a>
@@ -15,7 +15,7 @@
                     </li> -->
                 </ul>
             </li>
-            <li class="menu-item-has-children"><a href="<?php echo base_url() ?>site/loader" title="" <?= ($this->uri->segment(2)== "loader")? "class='active'":"" ?>>Ban Loader</a>
+            <li class="menu-item-has-children"><a href="<?php echo base_url() ?>loader" title="" <?= ($this->uri->segment(2)== "loader")? "class='active'":"" ?>>Ban Loader</a>
                 <ul class="mb-0 list-unstyled">
                     <!-- <li>
                         <a href="https://distributorbanforklift.com/spare-parts/spare-parts-forklift/spare-parts-all" title="">Spare Parts Forklift</a>
@@ -31,8 +31,8 @@
                     </li> -->
                 </ul>
             </li>
-            <li class="menu-item-has-children"><a href="<?php echo base_url() ?>site/truck" title="" <?= ($this->uri->segment(2)== "truck")? "class='active'":"" ?>>Ban Truck</a></li>
-            <li class="menu-item-has-children"><a href="<?php echo base_url() ?>site/press" title="" <?= ($this->uri->segment(2)== "press")? "class='active'":"" ?>>Mobile Press Ban</a></li>
+            <li class="menu-item-has-children"><a href="<?php echo base_url() ?>truck" title="" <?= ($this->uri->segment(2)== "truck")? "class='active'":"" ?>>Ban Truck</a></li>
+            <li class="menu-item-has-children"><a href="<?php echo base_url() ?>press" title="" <?= ($this->uri->segment(2)== "press")? "class='active'":"" ?>>Mobile Press Ban</a></li>
         </ul>
     </div>
 </div>

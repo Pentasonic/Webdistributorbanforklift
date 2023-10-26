@@ -67,7 +67,7 @@
 
 
                         <div>
-                            <a class="get-quote thm-btn thm-bg" href="<?php echo base_url() ?>site/katalog" title="">KATALOG ONLINE<img src="<?php echo base_url() ?>assets/frontend/images/icon/arrow.png" alt="arrow"></a>
+                            <a class="get-quote thm-btn thm-bg" href="<?php echo base_url() ?>katalog" title="">KATALOG ONLINE<img src="<?php echo base_url() ?>assets/frontend/images/icon/arrow.png" alt="arrow"></a>
                         </div>
                     </div>
                 </div>

@@ -121,10 +121,10 @@
                             <div class="col-md-6 col-sm-6 col-lg-3">
                                 <div class="post-box w-100">
                                     <div class="post-img overflow-hidden w-100">
-                                        <a href="<?php echo base_url() ?>site/artikelDetail/<?= $gallery_data[$i]['id_gallery']; ?>" title=""><img class="img-fluid w-100" src="<?= base_url($gallery_data[$i]['lokasi'])?>" alt="Post Image 1"></a>
+                                        <a href="<?php echo base_url() ?>artikel/<?= $gallery_data[$i]['id_gallery']; ?>" title=""><img class="img-fluid w-100" src="<?= base_url($gallery_data[$i]['lokasi'])?>" alt="Post Image 1"></a>
                                     </div>
                                     <div class="post-info w-100" style="text-align: left;">
-                                        <a href="<?php echo base_url() ?>site/artikelDetail/<?= $gallery_data[$i]['id_gallery']; ?>" style="text-align: left;margin-top:-15px;font-weight:600;"><?= $gallery_data[$i]['judul']; ?></a href="">
+                                        <a href="<?php echo base_url() ?>artikel/<?= $gallery_data[$i]['id_gallery']; ?>" style="text-align: left;margin-top:-15px;font-weight:600;"><?= $gallery_data[$i]['judul']; ?></a href="">
                                         <br>
                                         <span style="text-align: left;margin-top:-5px;font-size:12px;"><?php
 $words = explode(" ", $gallery_data[$i]['summary']);
